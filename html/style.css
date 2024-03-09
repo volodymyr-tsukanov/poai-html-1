@@ -14,18 +14,49 @@ h1, h2, #stopka {
     text-align: center;
 }
 
+#stopka {
+	clear:both;
+	width:100%;
+	padding:5px 0 5px 0;
+	text-align:center;
+}
+
 #tresc {
     background: #c2e7ff;
+	float:left;
+	width:60%;
+	padding:1%;
 }
 
 #menu {
     background: #ffffff;
+	float:left;
+	width:16%;
+	padding:1%;
+}
+
+#pasek {
+	float:right;
+	width:16%;
+	padding:1%;
 }
 
 #link {
 	color: #ffffff;
 	text-decoration: underline;
 }
+
+#kontener {
+	background:#ffffff;
+}
+
+
+*.box { background:#0000a0;
+color:#dbffff;
+padding:5px;
+margin:5px;
+font-size:90%;}
+*.box a{color:#ffffb0}
 
 
 /* TABELA */

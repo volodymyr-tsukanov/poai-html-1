@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Zadanie 1.2 </title>
+    <title> Forms </title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -12,9 +12,11 @@
             <h2>Szybki kurs HTML</h2>
         </div> <br>
         <div id="menu">
-            <a href="index.html">Podstawowe znaczniki</a>
-            <a href="tabele.html">Tworzenie tabel</a>
-            <a href="formularz.html">Budowa formularzy</a>
+            <ul>
+				<li> <a href="index.html">Podstawowe znaczniki</a> </li>
+				<li> <a href="tabele.html">Tworzenie tabel</a> </li>
+				<li> <a href="formularze.html">Budowa formularzy</a> </li>
+			</ul>
         </div> <br>
         <div id="tresc">
             <form action="mailto:vt@cs.pollub.pl" method="post">
@@ -41,15 +43,33 @@
                     <option value="s">Sport</option>
                     <option value="i">Inne</option>
                 </select><br>
-<textarea cols="10" rows="3" name="opinia">
-Po prostu lubię.
-</textarea><br>
+				<textarea cols="10" rows="3" name="opinia">
+				Po prostu lubię.
+				</textarea><br>
                 <button name="Kliknij" value="Klikniety">
                     Kliknij tutaj
                 </button>
             </form>
         </div>
     </div> <br>
+	<div id="pasek">
+		<div class="box">
+			<h3>Walidatory:</h3>
+			<ul>
+				<li> <a href="http://validator.w3.org/">HTML </a></li>
+				<li> <a href="http://jigsaw.w3.org/css-validator/">CSS</a></li>
+			</ul>
+		</div>
+		<div class="box">
+			<h3>Kursy:</h3>
+			<ul>
+				<li> <a href="https://www.w3schools.com/html/"> HTML </a></li>
+				<li> <a href="https://www.w3schools.com/css/"> CSS </a></li>
+				<li> <a href="https://www.w3schools.com/js/"> JS </a></li>
+				<li> <a href="https://www.w3schools.com/php/"> PHP </a></li>
+			</ul>
+		</div>
+	</div>
     <div id="stopka"> &copy;BP </div>
     </div>
 </body>
