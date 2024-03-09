@@ -63,3 +63,17 @@ footer {
 	margin:auto;
 	width:90%;
 }
+
+
+@media screen and (max-width: 720px) {
+	nav a { width: 48%;
+		padding: 10px 0;
+		font-size:140%;
+	}
+	.slajd {width: 45%; }
+}
+@media screen and (min-width: 481px) and (max-width: 720px) {
+	body { font-size: 13px; }
+	h1 { font-size: 23px; }
+	h2 { font-size: 18px; }
+}
