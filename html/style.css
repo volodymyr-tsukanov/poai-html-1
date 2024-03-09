@@ -23,7 +23,8 @@ h1, h2, #stopka {
 }
 
 
-/* ustawienia dla ca≥ej tabeli: */
+/* TABELA */
+ /* ustawienia dla ca≈Çej tabeli: */
 table {
     background: #ffffb3;
     text-align: center;
@@ -31,27 +32,24 @@ table {
     margin: 2%;
     border: 1pt solid #000040;
 }
-/*ustawienie tytu≥u tabeli:*/
+ /*ustawienie tytu≈Çu tabeli:*/
 caption {
     font-size: 150%
 }
-/*formatowanie czÍúci nag≥owkowej i stopki tabeli: */
+ /*formatowanie czƒô≈õci nag≈Ç√≥wkowej i stopki tabeli: */
 tfoot, thead {
     background: #0000a0;
     color: #ffffff;
     font-size: 120%
 }
-/*formatowanie pojedynczych komÛrek zwyk≥ych i nag≥Ûwkowych: */
+ /*formatowanie pojedynczych kom√≥rek zwyk≈Çych i nag≈Ç√≥wkowych: */
 td, th {
     border: 1pt solid #000040;
 }
-/*formatowanie elementu <a> zawartego w elemencie <tfoot>: */
+ /*formatowanie elementu <a> zawartego w elemencie <tfoot>: */
 tfoot a {
     color: #ffffff;
 }
-/* definicja klasy o nazwie parzysty - mozna
-jπ zastosowaÊ dla dowolnego znacznika w dokumencie html
-podajπc atrybut class="parzysty" :*/
 *.parzysty {
     background: #ffffff;
 }
