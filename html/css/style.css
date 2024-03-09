@@ -1,5 +1,5 @@
 body {
-    background: #4ae;
+    background: white;
     color: #000040;
 }
 
@@ -37,29 +37,25 @@ td, th {
     border: 1pt solid #000040;
 }
 
-h1, h2, #stopka {
+tbody tr:nth-child(2), tbody tr:nth-child(4) {
+	  background: white;
+}
+
+h1, h2, header, footer {
     background: #000040;
     color: #f0f0ff;
     text-align: center;
 }
 
-
-#kontener {
-	background: #ffffff;
-	float: center;
-	width: 90%;
-	height: 100%;
-}
-
-#menu {
-    background: #ffffff;
+/*nav {
+  background: #ffffff;
 	float: left;
 	width: 100%;
 	margin: 0;
 	padding: 0;
 	border-bottom: 2px solid #0000a0;
 }
-#menu li {
+nav li {
 	float: left;
 	margin: 0;
 	padding: 0;
@@ -68,7 +64,7 @@ h1, h2, #stopka {
 	font-family: "LucidaGrande", sans-serif;
 	font-size: 85%;
 }
-#menu a {
+nav a {
 	float: left;
 	display: block;
 	margin: 0;
@@ -79,30 +75,40 @@ h1, h2, #stopka {
 	border-bottom: none;
 	background: #0000a0;
 }
-#menu a:hover {
+nav a:hover {
 	background: #0000d5;
 	color: #ffffff;
 	text-decoration: none;
-}
+}*/
 
-#tresc {
-    background: #c2e7ff;
-	float: left;
-	width: 75%;
-	padding: 1%;
-}
-
-#pasek {
+aside {
 	float: right;
 	width: 20%;
 	padding: 1%;
 }
 
-#stopka {
+footer {
 	clear: both;
 	width: 100%;
 	padding: 5px 0 5px 0;
 	text-align: center;
+	border-radius: 12px;
+}
+
+
+#kontener {
+	background: #ffffff;
+	float: center;
+	width: 90%;
+	height: 100%;
+}
+
+#tresc {
+  background: #c2e7ff;
+	float: left;
+	width: 75%;
+	padding: 1%;
+	border-radius: 3px;
 }
 
 #nav {
@@ -116,6 +122,8 @@ ul#nav li {
 	float: left;
 	background: #98bed8;
 	margin-left: 3px;
+	border-radius: 4px;
+	box-shadow: 2px 1px blueviolet;
 }
 ul#nav li:hover {
 	border: 1px solid #d5d5d5;
@@ -159,11 +167,9 @@ ul#nav li:hover ul {
 	padding: 5px;
 	margin: 5px;
 	font-size: 90%;
+	border-radius: 6px;
+	box-shadow: 1px 3px navajowhite;
 }
 *.box a {
 	color: #ffffb0
-}
-
-*.parzysty {
-    background: #ffffff;
 }
