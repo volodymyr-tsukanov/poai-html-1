@@ -8,59 +8,10 @@ h1, h2, h3 {
     padding: 0;
 }
 
-h1, h2, #stopka {
-    background: #000040;
-    color: #8080ff;
-    text-align: center;
+label {
+	cursor: help;
 }
 
-#stopka {
-	clear:both;
-	width:100%;
-	padding:5px 0 5px 0;
-	text-align:center;
-}
-
-#tresc {
-    background: #c2e7ff;
-	float:left;
-	width:60%;
-	padding:1%;
-}
-
-#menu {
-    background: #ffffff;
-	float:left;
-	width:16%;
-	padding:1%;
-}
-
-#pasek {
-	float:right;
-	width:16%;
-	padding:1%;
-}
-
-#link {
-	color: #ffffff;
-	text-decoration: underline;
-}
-
-#kontener {
-	background:#ffffff;
-}
-
-
-*.box { background:#0000a0;
-color:#dbffff;
-padding:5px;
-margin:5px;
-font-size:90%;}
-*.box a{color:#ffffb0}
-
-
-/* TABELA */
- /* ustawienia dla całej tabeli: */
 table {
     background: #ffffb3;
     text-align: center;
@@ -68,28 +19,109 @@ table {
     margin: 2%;
     border: 1pt solid #000040;
 }
- /*ustawienie tytułu tabeli:*/
+
 caption {
     font-size: 150%
 }
- /*formatowanie części nagłówkowej i stopki tabeli: */
+
 tfoot, thead {
     background: #0000a0;
     color: #ffffff;
     font-size: 120%
 }
- /*formatowanie pojedynczych komórek zwykłych i nagłówkowych: */
-td, th {
-    border: 1pt solid #000040;
-}
- /*formatowanie elementu <a> zawartego w elemencie <tfoot>: */
 tfoot a {
     color: #ffffff;
 }
-*.parzysty {
-    background: #ffffff;
+
+td, th {
+    border: 1pt solid #000040;
 }
 
-label {
-	cursor: help;
+h1, h2, #stopka {
+    background: #000040;
+    color: #f0f0ff;
+    text-align: center;
+}
+
+
+#kontener {
+	background: #ffffff;
+	float: center;
+	width: 90%;
+	height: 100%;
+}
+
+#menu {
+    background: #ffffff;
+	float: left;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border-bottom: 2px solid #0000a0;
+}
+#menu li {
+	float: left;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	padding-right: 3px;
+	font-family: "LucidaGrande", sans-serif;
+	font-size: 85%;
+}
+#menu a {
+	float: left;
+	display: block;
+	margin: 0;
+	padding: 4px 8px;
+	color: #ffffd7;
+	text-decoration: none;
+	border: 1px solid #0000c6;
+	border-bottom: none;
+	background: #0000a0;
+}
+#menu a:hover {
+	background: #0000d5;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+#tresc {
+    background: #c2e7ff;
+	float: left;
+	width: 75%;
+	padding: 1%;
+}
+
+#pasek {
+	float: right;
+	width: 20%;
+	padding: 1%;
+}
+
+#stopka {
+	clear: both;
+	width: 100%;
+	padding: 5px 0 5px 0;
+	text-align: center;
+}
+
+#link {
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+
+*.box {
+	background: #0000a0;
+	color: #dbffff;
+	padding: 5px;
+	margin: 5px;
+	font-size: 90%;
+}
+*.box a {
+	color: #ffffb0
+}
+
+*.parzysty {
+    background: #ffffff;
 }
