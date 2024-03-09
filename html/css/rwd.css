@@ -65,19 +65,35 @@ footer {
 }
 
 
-@media screen and (max-width: 720px) {
+/*@media screen and (max-width: 720px) {
+	body {
+		background: red;
+	}
+	nav, footer {
+		background: #d4c7b9;
+		color: #ffe9ba;
+		border-radius: 10px;
+	}
 	nav a { width: 48%;
 		padding: 10px 0;
 		font-size: 140%;
 	}
 	.slajd { width: 45%; }
-}
+}*/
 @media screen and (min-width: 481px) and (max-width: 720px) {
 	body { font-size: 13px; }
 	h1 { font-size: 23px; }
 	h2 { font-size: 18px; }
 }
 @media (max-width: 480px) {
+	body {
+		background: #d4c7b9;
+	}
+	nav, footer {
+		background: #45525a;
+		color: #ffe9ba;
+		border-radius: 10px;
+	}
 	nav a { width: 96%;
 		padding: 5px 0;
 		font-size: 180%;
@@ -87,7 +103,16 @@ footer {
 @media only screen and (min-width : 768px)
 and (max-width : 1024px)
 and (orientation : landscape) {
+	body {
+		background: #45525a;
+	}
+	nav, footer {
+		background: #d4c7b9;
+		color: #ffe9ff;
+		border-radius: 10px;
+	}
 	nav a { width: 36%;
+		color: #000000;
 		padding: 10px 0;
 		font-size: 160%;
 	}
