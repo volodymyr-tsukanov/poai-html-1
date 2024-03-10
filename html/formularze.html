@@ -25,15 +25,16 @@
 			</ul>
         </nav> <br>
         <div id="tresc">
-            <form action="mailto:vt@cs.pollub.pl" method="post">
-                <label for="edittext">Podaj login: </label> <input type="text" id="edittext" name="login" /> <br>
-                <label for="edittext">Podaj hasło: </label> <input type="password" id="edittext" name="pass" /> <br><br>
+            <form action="#" method="get">
+                <label for="login">Podaj login: </label> <input type="text" id="login" name="login" pattern="[0-9A-Za-z]{3,20}" title="Wprowadź login" required/> <br>
+                <label for="haslo">Podaj hasło: </label> <input type="password" id="haslo" name="pass" pattern="{4,16}" title="Wprowadź hasło" required/> <br>
+                <label for="email">Podaj email: </label> <input type="email" id="email" name="email" placeholder="format: xxx@xxx.xxx" title="Wprowadź email"/> <br><br>
                 Wybierz ulubione języki programowania: <br>
                 <input type="checkbox" name="C" value="C" /> Język C/C++
-                <input type="checkbox" name="Java" value="J" /> Język Java
+                <input type="checkbox" name="Java" value="J" required/> Język Java
                 <input type="checkbox" name="PHP" value="PHP" /> Język PHP <br>
                 Wybierz przeglądarkę, z której korzystasz najczęściej: <br>
-                <input type="radio" name="przegladarka" value="Ff" /> Firefox <br>
+                <input type="radio" name="przegladarka" value="Ff" required/> Firefox <br>
                 <input type="radio" name="przegladarka" value="Ch" /> Chrome <br>
                 <input type="radio" name="przegladarka" value="II" />
                 Internet Explorer<br>
@@ -42,7 +43,7 @@
                 <!-- Inne znaczniki pól formularza -->
                 <br>Wskaż hobby i uzasadnij dlaczego to lubisz:
                 <br>
-                <select size="3" name="hobby" multiple="multiple">
+                <select size="3" name="hobby" multiple="multiple" required>
                     <option value="t">Turystyka</option>
                     <option value="m">Muzyka</option>
                     <option value="f">Film</option>
@@ -57,7 +58,7 @@
                 </button>
             </form>
         </div>
-    </div> <br>
+    </div>
 	<aside>
 		<div class="box">
 			<h3>Walidatory:</h3>
