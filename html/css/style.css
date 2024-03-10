@@ -47,47 +47,24 @@ h1, h2, header, footer {
     text-align: center;
 }
 
-/*nav {
-  background: #ffffff;
-	float: left;
+header {
+	order: 1;
 	width: 100%;
-	margin: 0;
-	padding: 0;
-	border-bottom: 2px solid #0000a0;
 }
-nav li {
-	float: left;
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	padding-right: 3px;
-	font-family: "LucidaGrande", sans-serif;
-	font-size: 85%;
+
+nav {
+	order: 1;
+	width: 100%;
 }
-nav a {
-	float: left;
-	display: block;
-	margin: 0;
-	padding: 4px 8px;
-	color: #ffffd7;
-	text-decoration: none;
-	border: 1px solid #0000c6;
-	border-bottom: none;
-	background: #0000a0;
-}
-nav a:hover {
-	background: #0000d5;
-	color: #ffffff;
-	text-decoration: none;
-}*/
 
 aside {
-	float: right;
-	width: 20%;
+	order: 6;
+	flex-grow: 2;
 	padding: 1%;
 }
 
 footer {
+	order: 10;
 	clear: both;
 	width: 100%;
 	padding: 5px 0 5px 0;
@@ -98,15 +75,19 @@ footer {
 
 #kontener {
 	background: #ffffff;
-	float: center;
-	width: 90%;
+	width: 100%;
 	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
 #tresc {
+	order: 5;
+	flex-grow: 7;
+	width: 70%;
   background: #c2e7ff;
-	float: left;
-	width: 75%;
 	padding: 1%;
 	border-radius: 3px;
 }
@@ -172,4 +153,20 @@ ul#nav li:hover ul {
 }
 *.box a {
 	color: #ffffb0
+}
+
+
+@media screen and (max-width: 720px) {
+	nav li {
+		font-size: 18px;
+		width: 90%;
+		margin-bottom: 4px;
+	}
+	#tresc {
+		width: 100%;
+		font-size: 20px;
+	}
+	aside {
+		width: 100%;
+	}
 }
