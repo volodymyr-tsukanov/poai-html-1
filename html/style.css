@@ -62,3 +62,13 @@ tfoot a {
 label {
 	cursor: help;
 }
+
+textarea {
+	width: 40%;
+}
+
+
+.btn {
+	color: white;
+	background: red;
+}
