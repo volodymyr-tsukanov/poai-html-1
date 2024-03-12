@@ -1,18 +1,18 @@
 # Preset
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> tst </title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title> Lab5 </title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 <body>
     <div id="kontener">
-        <div id="baner">
+        <header>
             <h2>Szybki kurs HTML</h2>
-        </div> <br>
-        <div id="menu">
+        </header>
+        <nav>
             <ul id="nav">
 				<li><a href="index.html">Podstawy</a></li>
 				<li><a href="tabele.html">Tabele</a></li>
@@ -22,12 +22,13 @@
 						<li><a href="obliczenia.html" >Obliczenia w formularzu</a></li>
 					</ul>
 				</li>
-				<li><a href="" title="">Galeria</a></li>
+				<li><a href="galeria.html">Galeria</a></li>
 			</ul>
-        </div> <br>
+        </nav>
         <div id="tresc">
-        </div> <br>
-		<div id="pasek">
+		
+        </div>
+		<aside>
 			<div class="box">
 				<h3>Walidatory:</h3>
 				<ul>
@@ -44,8 +45,8 @@
 					<li> <a href="https://www.w3schools.com/php/"> PHP </a></li>
 				</ul>
 			</div>
-		</div>
-        <div id="stopka"> &copy;BP </div>
+		</aside>
+        <footer> &copy;BP </footer>
     </div>
 </body>
 </html>

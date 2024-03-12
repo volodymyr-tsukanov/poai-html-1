@@ -47,26 +47,29 @@ h1, h2, header, footer {
     text-align: center;
 }
 
+textarea {
+	width: 40%;
+}
+
 header {
 	order: 1;
-	width: 100%;
+	width: 93%;
 }
 
 nav {
-	order: 1;
+	order: 2;
 	width: 100%;
 }
 
 aside {
-	order: 6;
-	flex-grow: 2;
+	order: 4;
 	padding: 1%;
+	width: 18%;
 }
 
 footer {
-	order: 10;
-	clear: both;
-	width: 100%;
+	order: 5;
+	width: 92%;
 	padding: 5px 0 5px 0;
 	text-align: center;
 	border-radius: 12px;
@@ -75,8 +78,6 @@ footer {
 
 #kontener {
 	background: #ffffff;
-	width: 100%;
-	height: 100%;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -84,8 +85,7 @@ footer {
 }
 
 #tresc {
-	order: 5;
-	flex-grow: 7;
+	order: 3;
 	width: 70%;
   background: #c2e7ff;
 	padding: 1%;
@@ -141,6 +141,11 @@ ul#nav li:hover ul {
 	text-decoration: underline;
 }
 
+
+*.btn {
+	color: white;
+	background: red;
+}
 
 *.box {
 	background: #0000a0;
