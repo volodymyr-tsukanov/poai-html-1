@@ -1,17 +1,56 @@
+/* Default */
+/* - Containers */
 body {
     background: white;
     color: #000040;
 }
 
+header {
+	order: 1;
+	width: 93%;
+	background: #000040;
+	color: #f0f0ff;
+	text-align: center;
+	border-radius: 0 0 10px 10px;
+}
+
+nav {
+	order: 2;
+	width: 100%;
+}
+
+aside {
+	order: 4;
+	padding: 1%;
+	width: 18%;
+}
+
+footer {
+	order: 5;
+	width: 92%;
+	padding: 5px 0 5px 0;
+	background: #000040;
+	color: #f0f0ff;
+	text-align: center;
+	border-radius: 0 17px 15px 13px;
+}
+
+/*  - Basic */
 h1, h2, h3 {
     margin: 0;
     padding: 0;
 }
 
+/*  - Form */
 label {
 	cursor: help;
 }
 
+textarea {
+	width: 40%;
+}
+
+/*  - Table */
 table {
     background: #ffffb3;
     text-align: center;
@@ -38,44 +77,13 @@ td, th {
 }
 
 tbody tr:nth-child(2), tbody tr:nth-child(4) {
-	  background: white;
-}
-
-h1, h2, header, footer {
-    background: #000040;
-    color: #f0f0ff;
-    text-align: center;
-}
-
-textarea {
-	width: 40%;
-}
-
-header {
-	order: 1;
-	width: 93%;
-}
-
-nav {
-	order: 2;
-	width: 100%;
-}
-
-aside {
-	order: 4;
-	padding: 1%;
-	width: 18%;
-}
-
-footer {
-	order: 5;
-	width: 92%;
-	padding: 5px 0 5px 0;
-	text-align: center;
-	border-radius: 12px;
+	background: white;
 }
 
 
+
+/* Ids */
+/* - Containers */
 #kontener {
 	background: #ffffff;
 	display: flex;
@@ -87,7 +95,7 @@ footer {
 #tresc {
 	order: 3;
 	width: 70%;
-  background: #c2e7ff;
+	background: #c2e7ff;
 	padding: 1%;
 	border-radius: 3px;
 }
@@ -103,7 +111,7 @@ ul#nav li {
 	float: left;
 	background: #98bed8;
 	margin-left: 3px;
-	border-radius: 4px;
+	border-radius: 0 4px 0 6px;
 	box-shadow: 2px 1px blueviolet;
 }
 ul#nav li:hover {
@@ -136,12 +144,15 @@ ul#nav li:hover ul {
 	width: 177px;
 }
 
+/*  - Other */
 #link {
 	color: #ffffff;
 	text-decoration: underline;
 }
 
 
+
+/* Classes */
 *.btn {
 	color: white;
 	background: red;
@@ -153,7 +164,7 @@ ul#nav li:hover ul {
 	padding: 5px;
 	margin: 5px;
 	font-size: 90%;
-	border-radius: 6px;
+	border-radius: 8px 3px 0 6px;
 	box-shadow: 1px 3px navajowhite;
 }
 *.box a {
@@ -161,6 +172,8 @@ ul#nav li:hover ul {
 }
 
 
+
+/* Screen size */
 @media screen and (max-width: 720px) {
 	nav li {
 		font-size: 18px;
