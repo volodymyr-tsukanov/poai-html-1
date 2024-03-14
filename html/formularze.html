@@ -25,9 +25,17 @@
 			</ul>
         </div> <br>
         <div id="tresc">
+	    <h3>Podstawowe znaczniki do formularzy to:</h3>
+            <ul>
+                <li>&lt;form&gt; - korzeń formularza</li>
+                <li>&lt;input&gt; - pole tekstowe, radio, chekbox</li>
+                <li>&lt;select&gt; - lista</li>
+                <li>&lt;textarea&gt; - pole tekst</li>
+                <li>&lt;button&gt; - przycisk</li>
+            </ul>
             <form action="mailto:vt@cs.pollub.pl" method="post">
                 <label for="edittext">Podaj login: </label> <input type="text" id="edittext" name="login" /> <br>
-                <label for="edittext">Podaj hasło: </label> <input type="password" id="edittext" name="pass" /> <br><br>
+                <label for="edittext2">Podaj hasło: </label> <input type="password" id="edittext2" name="pass" /> <br><br>
                 Wybierz ulubione języki programowania: <br>
                 <input type="checkbox" name="C" value="C" /> Język C/C++
                 <input type="checkbox" name="Java" value="J" /> Język Java
@@ -49,12 +57,11 @@
                     <option value="s">Sport</option>
                     <option value="i">Inne</option>
                 </select><br>
-				<textarea cols="10" rows="3" name="opinia">
-				Po prostu lubię.
-				</textarea><br>
-                <button name="Kliknij" value="Klikniety">
-                    Kliknij tutaj
-                </button>
+                <textarea cols="10" rows="3" name="opinia">
+                    Po prostu lubię.
+                </textarea> <br>
+		<input type="submit" value="Wyślij" class="btn" />
+                <input type="reset" value="Wyczyść" class="btn" />
             </form>
         </div> <br>
 		<div id="pasek">
