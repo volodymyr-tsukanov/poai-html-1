@@ -17,3 +17,23 @@ function oblicz()
 	var s=document.getElementById('suma');
 	s.value=l1+l2;
 }
+
+function obliczRata(){
+	let k = parseFloat(document.getElementsByName('K')[0].value);
+	let n = parseInt(document.getElementsByName('n')[0].value);
+	let pr = parseFloat(document.getElementsByName('pr')[0].value);
+	let rata_mies = document.getElementById('rata_mies');
+	let kwota_odsetki = document.getElementById('kwota_odsetki');
+	
+	let pr_mc = pr/12;
+	var rata = (k*pr_mc)/(1-1/((1+pr_mc)**n));
+	if(isNaN(rata)/* || isFinite(rata)*/){
+		rata_mies.value = 'Błędne dane';
+		kwota_odsetki.value = '(float, int, float)';
+		alert('Wprawadź poprawne dane');
+	} else{
+		rata_mies.value = rata;
+		kwota_odsetki.value = k+k*(pr/100);
+	}
+	//console.log(k + ' ' + n + ' ' + pr + ' ' + rata);
+}
