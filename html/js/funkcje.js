@@ -30,10 +30,38 @@ function obliczRata(){
 	if(isNaN(rata)/* || isFinite(rata)*/){
 		rata_mies.value = 'Błędne dane';
 		kwota_odsetki.value = '(float, int, float)';
-		alert('Wprawadź poprawne dane');
+		alert('Wprowadź poprawne dane');
 	} else{
 		rata_mies.value = rata;
 		kwota_odsetki.value = k+k*(pr/100);
 	}
 	//console.log(k + ' ' + n + ' ' + pr + ' ' + rata);
+}
+
+function calculate(){
+	var x = parseFloat(document.getElementById('x').value);
+	var y = parseFloat(document.getElementById('y').value);
+	var result = 0.0;
+	
+	let tab = document.getElementsByName('operator');
+	let op;
+	for(let i=0; i<tab.length; i++){
+		if(tab[i].checked) op = tab[i].value;
+	}
+	switch(op){
+		case 'pls':
+			result = x+y;
+		break;
+		case 'mns':
+			result = x-y;
+		break;
+		case 'mul':
+			result = x*y;
+		break;
+		case 'div':
+			result = x/y;
+		break;
+	}
+	
+	document.getElementById('wynik').value = result;
 }

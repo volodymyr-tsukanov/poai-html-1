@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Galeria </title>
+    <title> Kalkulatorek </title>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script src="js/funkcje.js"></script>
 </head>
 <body>
     <div id="kontener">
@@ -22,43 +23,40 @@
 						<li><a href="kalkulator.html" >Kalkulatorek</a></li>
 					</ul>
 				</li>
-				<li><a href="" title="">Galeria</a></li>
+				<li><a href="galeria.html">Galeria</a></li>
 			</ul>
         </nav>
         <div id="tresc">
-			<h3><center>Galeria zdjęć</center></h3> <br>
-			<div id="galeria">
-			<a href="images/full/obraz1.jpg" target="_blank">
-				<img src="images/thumbnails/obraz1.jpg" alt="Obraz 1">
-			</a>
-			<a href="images/full/obraz2.jpg" target="_blank">
-				<img src="images/thumbnails/obraz2.jpg" alt="Obraz 2">
-			</a>
-			<a href="images/full/obraz3.jpg" target="_blank">
-				<img src="images/thumbnails/obraz3.jpg" alt="Obraz 3">
-			</a>
-			<a href="images/full/obraz4.jpg" target="_blank">
-				<img src="images/thumbnails/obraz4.jpg" alt="Obraz 4">
-			</a>
-			<a href="images/full/obraz5.jpg" target="_blank">
-				<img src="images/thumbnails/obraz5.jpg" alt="Obraz 5">
-			</a>
-			<a href="images/full/obraz6.jpg" target="_blank">
-				<img src="images/thumbnails/obraz6.jpg" alt="Obraz 6">
-			</a>
-			<a href="images/full/obraz7.jpg" target="_blank">
-				<img src="images/thumbnails/obraz7.jpg" alt="Obraz 7">
-			</a>
-			<a href="images/full/obraz8.jpg" target="_blank">
-				<img src="images/thumbnails/obraz8.jpg" alt="Obraz 8">
-			</a>
-			<a href="images/full/obraz9.jpg" target="_blank">
-				<img src="images/thumbnails/obraz9.jpg" alt="Obraz 9">
-			</a>
-			<a href="images/full/obraz10.jpg" target="_blank">
-				<img src="images/thumbnails/obraz10.jpg" alt="Obraz 10">
-			</a>
-			</div>
+			<table>
+                <thead>
+                    <tr>
+                        <th>Wpisz liczby:</th>
+                        <th>Wskaż działanie:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+							<label for="x">X:</label><br><input type="number" id="x" name="x" /> <br>
+							<label for="y">Y:</label><br><input type="number" id="y" name="y" />
+						</td>
+                        <td>
+							<input type="radio" name="operator" value="pls" /> + <br>
+							<input type="radio" name="operator" value="mns" /> - <br>
+							<input type="radio" name="operator" value="mul" /> * <br>
+							<input type="radio" name="operator" value="div" /> / <br>
+						</td>
+                    </tr>
+                    <tr>
+                        <td>
+							<button class="btn" onclick="calculate()">Oblicz</button>
+						</td>
+                        <td>
+							<label for="wynik">Wynik: </label><input type="text" id="wynik" name="wynik" readonly />
+						</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 		<aside>
 			<div class="box">
