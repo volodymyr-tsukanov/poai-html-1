@@ -12,6 +12,10 @@ label {
 	cursor: help;
 }
 
+textarea {
+	width: 30%;
+}
+
 table {
     background: #ffffb3;
     text-align: center;
@@ -47,8 +51,6 @@ h1, h2, #stopka {
 #kontener {
 	background: #ffffff;
 	float: center;
-	width: 90%;
-	height: 100%;
 }
 
 #menu {
@@ -152,6 +154,10 @@ ul#nav li:hover ul {
 	text-decoration: underline;
 }
 
+*.btn {
+	background: red;
+	color: white;
+}
 
 *.box {
 	background: #0000a0;

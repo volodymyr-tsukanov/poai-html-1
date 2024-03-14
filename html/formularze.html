@@ -25,9 +25,17 @@
 			</ul>
         </div> <br>
         <div id="tresc">
+	    <h3>Podstawowe znaczniki do formularzy to:</h3>
+            <ul>
+                <li>&lt;form&gt; - korzeń formularza</li>
+                <li>&lt;input&gt; - pole tekstowe, radio, chekbox</li>
+                <li>&lt;select&gt; - lista</li>
+                <li>&lt;textarea&gt; - pole tekst</li>
+                <li>&lt;button&gt; - przycisk</li>
+            </ul>
             <form action="mailto:vt@cs.pollub.pl" method="post">
                 <label for="edittext">Podaj login: </label> <input type="text" id="edittext" name="login" /> <br>
-                <label for="edittext">Podaj hasło: </label> <input type="password" id="edittext" name="pass" /> <br><br>
+                <label for="edittext2">Podaj hasło: </label> <input type="password" id="edittext2" name="pass" /> <br><br>
                 Wybierz ulubione języki programowania: <br>
                 <input type="checkbox" name="C" value="C" /> Język C/C++
                 <input type="checkbox" name="Java" value="J" /> Język Java
@@ -37,8 +45,6 @@
                 <input type="radio" name="przegladarka" value="Ch" /> Chrome <br>
                 <input type="radio" name="przegladarka" value="II" />
                 Internet Explorer<br>
-                <input type="submit" value="Wyślij" />
-                <input type="reset" value="Wyczyść" />
                 <!-- Inne znaczniki pól formularza -->
                 <br>Wskaż hobby i uzasadnij dlaczego to lubisz:
                 <br>
@@ -49,34 +55,30 @@
                     <option value="s">Sport</option>
                     <option value="i">Inne</option>
                 </select><br>
-				<textarea cols="10" rows="3" name="opinia">
-				Po prostu lubię.
-				</textarea><br>
-                <button name="Kliknij" value="Klikniety">
-                    Kliknij tutaj
-                </button>
+                <textarea cols="10" rows="3" name="opinia">Po prostu lubię.</textarea> <br>
+				<input type="submit" value="Wyślij" class="btn" />
+                <input type="reset" value="Wyczyść" class="btn" />
             </form>
-        </div>
-    </div> <br>
-	<div id="pasek">
-		<div class="box">
-			<h3>Walidatory:</h3>
-			<ul>
-				<li> <a href="http://validator.w3.org/">HTML </a></li>
-				<li> <a href="http://jigsaw.w3.org/css-validator/">CSS</a></li>
-			</ul>
+        </div> <br>
+		<div id="pasek">
+			<div class="box">
+				<h3>Walidatory:</h3>
+				<ul>
+					<li> <a href="http://validator.w3.org/">HTML </a></li>
+					<li> <a href="http://jigsaw.w3.org/css-validator/">CSS</a></li>
+				</ul>
+			</div>
+			<div class="box">
+				<h3>Kursy:</h3>
+				<ul>
+					<li> <a href="https://www.w3schools.com/html/"> HTML </a></li>
+					<li> <a href="https://www.w3schools.com/css/"> CSS </a></li>
+					<li> <a href="https://www.w3schools.com/js/"> JS </a></li>
+					<li> <a href="https://www.w3schools.com/php/"> PHP </a></li>
+				</ul>
+			</div>
 		</div>
-		<div class="box">
-			<h3>Kursy:</h3>
-			<ul>
-				<li> <a href="https://www.w3schools.com/html/"> HTML </a></li>
-				<li> <a href="https://www.w3schools.com/css/"> CSS </a></li>
-				<li> <a href="https://www.w3schools.com/js/"> JS </a></li>
-				<li> <a href="https://www.w3schools.com/php/"> PHP </a></li>
-			</ul>
-		</div>
-	</div>
-    <div id="stopka"> &copy;BP </div>
+		<div id="stopka"> &copy;BP </div>
     </div>
 </body>
 </html>
