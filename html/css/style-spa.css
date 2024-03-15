@@ -1,0 +1,101 @@
+/* Default */
+/* - Containers */
+body {
+	background: #d4c7b9;
+	font-size: 18px;
+}
+
+nav{
+	float: left;
+	width: 100%;
+}
+nav button {
+	background: #45525a;
+	color: #ffe9ba;
+	float: left;
+	display: block;
+	width: 24%;
+	margin-right: 1%;
+	padding: 1% 0;
+	font-size: 110%;
+	text-align: center;
+	border-radius: 20px;
+}
+
+footer {
+	background: #45525a;
+	color: #ffe9ba;
+	clear:both;
+	border-radius:20px;
+	padding: 0.2em;
+	text-align: center;
+}
+
+section {
+	clear: both;
+}
+
+/*  - Basic */
+h1,h2 {
+	padding: 0.2em;
+	text-align: center;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 20px;
+}
+
+
+/* Classes */
+.srodek {
+	text-align: center;
+}
+
+.slajd {
+	float: left;
+	display: block;
+	width :13%;
+	text-align: center;
+	border-radius: 20px;
+	background: #ffe9ba;
+	padding: 1% 0.5%;
+	margin: 1%;
+}
+.slajd:hover {
+	background:#45525a;
+}
+
+.galeria{
+margin:auto;
+width:90%;
+}
+
+
+/* Screen size */
+@media screen and (max-width: 720px) {
+	nav button { width: 48%;
+		padding: 10px 0;
+		font-size:140%;
+	}
+	.slajd {width: 45%; }
+}
+
+@media screen and (min-width: 481px) and (max-width: 720px) {
+	body { font-size: 13px; }
+	h1 { font-size: 23px; }
+	h2 { font-size: 18px; }
+}
+
+@media screen and (max-width: 481px) {
+	body { font-size: 16px; }
+	h1 { font-size: 24px; }
+	h2 { font-size: 20px; }
+	nav button{ font-size:20px;
+		padding:10px 0;
+		border-bottom: 3px solid white;
+		width: 98%;
+	}
+	.slajd {width: 95%; }
+}
