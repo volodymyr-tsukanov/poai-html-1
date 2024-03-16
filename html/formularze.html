@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Forms </title>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script src="js/walidacja.js"></script>
 </head>
 <body>
     <div id="kontener">
@@ -26,7 +27,7 @@
 			</ul>
         </nav>
         <div id="tresc">
-	    <h3>Podstawowe znaczniki do formularzy to:</h3>
+			<h3>Podstawowe znaczniki do formularzy to:</h3>
             <ul>
                 <li>&lt;form&gt; - korzeń formularza</li>
                 <li>&lt;input&gt; - pole tekstowe, radio, chekbox</li>
@@ -34,32 +35,42 @@
                 <li>&lt;textarea&gt; - pole tekst</li>
                 <li>&lt;button&gt; - przycisk</li>
             </ul>
-            <form action="mailto:vt@cs.pollub.pl" method="post">
-                <label for="login">Podaj login: </label> <input type="text" id="login" name="login" /> <br>
-                <label for="haslo">Podaj hasło: </label> <input type="password" id="haslo" name="pass" /> <br><br>
-                Wybierz ulubione języki programowania: <br>
-                <input type="checkbox" name="C" value="C" /> Język C/C++
-                <input type="checkbox" name="Java" value="J" required/> Język Java
-                <input type="checkbox" name="PHP" value="PHP" /> Język PHP <br>
-                Wybierz przeglądarkę, z której korzystasz najczęściej: <br>
-                <input type="radio" name="przegladarka" value="Ff" required/> Firefox <br>
-                <input type="radio" name="przegladarka" value="Ch" /> Chrome <br>
-                <input type="radio" name="przegladarka" value="II" />
-                Internet Explorer<br>
-                <!-- Inne znaczniki pól formularza -->
-                <br>Wskaż hobby i uzasadnij dlaczego to lubisz:
-                <br>
-                <select size="3" name="hobby" multiple="multiple" required>
-                    <option value="t">Turystyka</option>
-                    <option value="m">Muzyka</option>
-                    <option value="f">Film</option>
-                    <option value="s">Sport</option>
-                    <option value="i">Inne</option>
-                </select><br>
-				<textarea cols="10" rows="3" name="opinia">Po prostu lubię.</textarea><br>
-				<input type="submit" value="Wyślij" class="btn" />
-                <input type="reset" value="Wyczyść" class="btn" />
-            </form>
+            <form method="post" action="mailto:s99819@pollub.edu.pl" onsubmit="return sprawdz()" >
+				<table>
+					<tr> <td>Nazwisko: </td>
+						<td><input name="nazw" size="30" id="nazw"/> </td>
+						<td id="nazw_error" class="czerwone"></td>
+					</tr>
+					<tr> <td>Wiek:</td>
+						<td><input name="wiek" size ="30" id="wiek"/></td>
+						<td id="wiek_error" class="czerwone"></td>
+					</tr>
+					<tr> <td>Państwo:</td>
+						<td>
+							<select name="kraj" id="kraj">
+								<option value="pl" selected="selected">Polska</option>
+								<option value="gb">Wielka Brytania</option>
+							</select>
+						</td>
+					</tr>
+					<tr> <td>Adres e-mail: </td>
+						<td><input name="email" size ="30" id="email"/></td>
+						<td id="email_error" class="czerwone"></td>
+					</tr>
+				</table>
+				<h4>Zamawiam tutorial z języka:</h4>
+				<p><input name="php" type="checkbox" id="php"/>PHP
+				<input name="c" type="checkbox" id="c"/>C/C++
+				<input name="java" type="checkbox" id="java"/>Java
+				<span id="produkt_error" class="czerwone"></span></p>
+				<h4>Sposób zapłaty:</h4>
+				<p><input name="zaplata" id="zaplata" type="radio" value="euro" />eurocard
+				<input name="zaplata" type="radio" value= "visa" />visa
+				<input name="zaplata" type="radio" value= "przelew" />przelew bankowy
+				<span id="zaplata_error" class="czerwone"></span><br>
+				<input type="submit" value=" Wyślij " />
+				<input type="reset" value=" Anuluj " /></p>
+			</form>
         </div>
 		<aside>
 			<div class="box">
