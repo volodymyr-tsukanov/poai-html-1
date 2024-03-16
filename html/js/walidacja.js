@@ -5,9 +5,9 @@ function sprawdzPole(pole_id,obiektRegex) {
 //pole_id - id sprawdzanego pola tekstowego
 //obiektRegex - wyrażenie regularne
 //---------------------------------
-	var obiektPole = document.getElementById(pole_id);
+	var fielD = document.getElementById(pole_id);
 	
-	if(!obiektRegex.test(obiektPole.value)) return (false);
+	if(!obiektRegex.test(fielD.value)) return (false);
 	else return (true);
 }
 
@@ -15,10 +15,10 @@ function sprawdzRadio(nazwa_radio){
 //Funkcja sprawdza czy wybrano przycisk radio
 //z grupy przycisków o nazwie nazwa_radio
 //---------------------------------------
-	var obiekt=document.getElementsByName(nazwa_radio);
+	var radiO=document.getElementsByName(nazwa_radio);
 	
-	for (i=0; i<obiekt.length; i++){
-		wybrany=obiekt[i].checked;
+	for (i=0; i<radiO.length; i++){
+		wybrany=radiO[i].checked;
 		if (wybrany) return true;
 	}
 	return false;
@@ -28,9 +28,9 @@ function sprawdzBox(box_id)
 {//Funkcja sprawdza czy przycisk typu checkbox
 //o identyfikatorze box_id jest zaznaczony
 //----------------------------------------
-	var obiekt=document.getElementById(box_id);
+	var boX=document.getElementById(box_id);
 	
-	if (obiekt.checked) return true;
+	if (boX.checked) return true;
 	else return false;
 }
 
@@ -75,5 +75,33 @@ function sprawdz()
 		document.getElementById('zaplata_error').innerHTML='Wybierz metodę płatności!';
 	}
 	
-	return ok;
+	if(ok) return pokazDane();
+	else return false;
+}
+
+function pokazDane()
+{
+	let dane='Następujące dane zostaną wysłane:';
+	
+	dane+='\nNazwisko: '+document.getElementById('nazw').value+
+	'\nWiek: '+document.getElementById('wiek').value+
+	'\nPaństwo: '+document.getElementById('kraj').value+
+	'\nEmail: '+document.getElementById('email').value+
+	'\nProdukty:';
+	let obj=document.getElementById('php');
+	if (obj.checked) dane+=' php';
+	obj=document.getElementById('c');
+	if (obj.checked) dane+=' c/c++';
+	obj=document.getElementById('java');
+	if (obj.checked) dane+=' java';
+	let obj2=document.getElementsByName('zaplata');
+	for (i=0; i<obj2.length; i++){
+		if(obj2[i].checked){
+			dane+='\nSposób zapłaty: '+obj2[i].value;
+			break;
+		}
+	}
+	
+	if (window.confirm(dane)) return true;
+	else return false;
 }

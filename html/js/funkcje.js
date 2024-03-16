@@ -135,9 +135,9 @@ function pokazPost()
 
 function pokazDane()
 {
-	var dane="Następujące dane zostaną wysłane:\n";
+	var dane='Następujące dane zostaną wysłane:';
 	
-	dane+='Imię: '+document.getElementById('imie').value+
+	dane+='\nImię: '+document.getElementById('imie').value+
 	'\nEmail: '+document.getElementById('email').value+
 	'\nTelefon: '+document.getElementById('telefon').value+
 	'\nKomentarz: '+document.getElementById('wiadomosc').value;
