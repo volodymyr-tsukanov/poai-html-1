@@ -121,6 +121,7 @@ function pokazPost()
 	tresc='<h2><br>Dodaj post</h2>';
 	
 	tresc+='<article class="srodek" ><form action="mailto:s99819@pollub.edu.pl" method="post" onsubmit="return pokazDane();">'+
+	'Imię:<br> <input type="text" id="imie" name="imie" pattern="[A-Za-ząćęłńóśźżĄĆĘŁŃÓŚŹŻ]+( [A-Za-ząćęłńóśźżĄĆĘŁŃÓŚŹŻ]+)?" required /><br>'+
 	'Email:<br> <input type="email" id="email" name="email" required /><br>'+
 	'Telefon:<br> <input type="tel" id="telefon" name="telefon" required /><br>'+
 	'Zainteresowania:<br> <input type="checkbox" name="zainteresowanie" value="spt" />Sport <input type="checkbox" name="zainteresowanie" value="mzk" />Muzyka <input type="checkbox" name="zainteresowanie" value="flm" />Film <input type="checkbox" name="zainteresowanie" value="inn" />Inne <br>'+
@@ -136,7 +137,8 @@ function pokazDane()
 {
 	var dane="Następujące dane zostaną wysłane:\n";
 	
-	dane+='Email: '+document.getElementById('email').value+
+	dane+='Imię: '+document.getElementById('imie').value+
+	'\nEmail: '+document.getElementById('email').value+
 	'\nTelefon: '+document.getElementById('telefon').value+
 	'\nKomentarz: '+document.getElementById('wiadomosc').value;
 	
