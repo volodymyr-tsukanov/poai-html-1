@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Lab9 </title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="kontener">
+        <header>
+            <h2>Szybki kurs HTML</h2>
+        </header>
+        <nav>
+            <ul id="nav">
+				<li><a href="index.html">Podstawy</a></li>
+				<li><a href="tabele.html">Tabele</a></li>
+				<li><a href="">Formularze</a>
+					<ul>
+						<li><a href="formularze.html" >Pola formularza</a></li>
+						<li><a href="obliczenia.html" >Obliczenia w formularzu</a></li>
+						<li><a href="kalkulator.html" >Kalkulatorek</a></li>
+					</ul>
+				</li>
+				<li><a href="galeria.html">Galeria</a></li>
+			</ul>
+        </nav>
+        <div id="tresc">
+			<script>
+				$(document).ready(function () {
+					//akcje do wykonywania po załadowaniu strony
+					$('body').text('Test jQuery!');
+				});
+			</script>
+        </div>
+		<aside>
+			<div class="box">
+				<h3>Walidatory:</h3>
+				<ul>
+					<li> <a href="http://validator.w3.org/">HTML </a></li>
+					<li> <a href="http://jigsaw.w3.org/css-validator/">CSS</a></li>
+				</ul>
+			</div>
+			<div class="box">
+				<h3>Kursy:</h3>
+				<ul>
+					<li> <a href="https://www.w3schools.com/html/"> HTML </a></li>
+					<li> <a href="https://www.w3schools.com/css/"> CSS </a></li>
+					<li> <a href="https://www.w3schools.com/js/"> JS </a></li>
+					<li> <a href="https://www.w3schools.com/php/"> PHP </a></li>
+				</ul>
+			</div>
+		</aside>
+        <footer> &copy;VT </footer>
+    </div>
+</body>
+</html>
