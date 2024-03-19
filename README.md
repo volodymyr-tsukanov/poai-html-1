@@ -1,2 +1,4 @@
-# Html 1
-HTML; Informatyka l stopień 4 semestr; Podstawy aplikacji internetowych</br></br>
+# Lab8
+Obsługa i walidacja formularzy po stronie klienta za pomocą JavaScript. </br>
+
+**HTML**; **CSS**; **JavaScript**
