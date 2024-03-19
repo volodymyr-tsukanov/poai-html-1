@@ -6,6 +6,7 @@
     <title> Obliczenia </title>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
 	<script src="js/funkcje.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
     <div id="kontener">
@@ -33,7 +34,7 @@
 			<label for="procent">Procent: </label> <input type="number" id="procent" name="pr" /> <br>
 			<label for="rata_mies">Rata miesięczna: </label> <input type="text" id="rata_mies" name="rata" readonly /> <br>
 			<label for="kwota_odsetki">Kwota z odsetkami: </label> <input type="text" id="kwota_odsetki" name="K_ods" readonly /> <br>
-			<button class="btn" onclick="obliczRata()">Oblicz ratę stałą</button>
+			<button id="oblicz" class="btn">Oblicz ratę stałą</button>
         </div>
 		<aside>
 			<div class="box">
@@ -55,5 +56,30 @@
 		</aside>
         <footer> &copy;VT </footer>
     </div>
+	
+	<script>
+		$(document).ready(function () {
+			$('#tresc').css('background', 'gray');
+			$('input').css('font-weight', 'bold');
+			$('.zielony').css('color', 'lightgreen');
+			$('#oblicz').click(function(){
+				let k = $('#kwota').val();
+				let n = $('#liczba_rat').val();
+				let pr = $('#procent').val();
+	
+				let pr_mc = pr/12;
+				var rata = (k*pr_mc)/(1-1/((1+pr_mc)**n));
+				if(isNaN(rata)/* || isFinite(rata)*/){
+					$('#rata_mies').val('Błędne dane');
+					$('#kwota_odsetki').val('(float, int, float)');
+					alert('Wprowadź poprawne dane');
+				} else{
+					$('#rata_mies').val(rata);
+					$('#kwota_odsetki').val(k+k*(pr/100));
+				}
+				console.log(k + ' ' + n + ' ' + pr + ' ' + rata);
+			});
+		});
+	</script>
 </body>
 </html>
