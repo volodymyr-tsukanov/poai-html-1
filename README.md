@@ -1,2 +1,4 @@
-# Html 1
-HTML; Informatyka l stopień 4 semestr; Podstawy aplikacji internetowych</br></br>
+# Lab 7
+Budowa prostej aplikacji typu SPA z wykorzystaniem funkcji JavaScript. </br>
+
+**HTML**; **CSS**; **JavaScript**
