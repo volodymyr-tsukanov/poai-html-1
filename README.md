@@ -1,2 +1,4 @@
-# Html 1
-HTML; Informatyka l stopień 4 semestr; Podstawy aplikacji internetowych</br></br>
+# Lab 5
+Realizacja responsywnej strony internetowej z wykorzystaniem zapytania o media. </br>
+
+**HTML**; **CSS**
