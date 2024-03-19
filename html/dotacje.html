@@ -9,7 +9,13 @@
 		<h1>Formularz dotacji</h1>
 		<fieldset>
 			<label for="beneficjent">Beneficjent: </label>
-			<input type="text" id="beneficjent" name="beneficjent" list="organizacje" title="Wprowadź nazwę beneficjenta" required> <br>
+			<input type="text" id="beneficjent" name="beneficjent" list="beneficienci" title="Wprowadź nazwę beneficjenta" required> <br>
+			<datalist id="beneficienci">
+				<option value="Wioski Dziecięce SOS">
+				<option value="Biedni studenci">
+				<option value="Pracownicy uniwersyteckie">
+				<option value="Kotki">
+			</datalist>
 			
 			<label for="wielkosc_dotacji">Wielkość dotacji: </label>
 			<input type="number" id="wielkosc_dotacji" name="wielkosc_dotacji" min="20" step="1" placeholder=">=20" title="Podaj wielkość dotacji" required>
