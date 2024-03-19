@@ -9,10 +9,16 @@
 		<h1>Formularz dotacji</h1>
 		<fieldset>
 			<label for="beneficjent">Beneficjent: </label>
-			<input type="text" id="beneficjent" name="beneficjent" title="Wprowadź nazwę beneficjenta" required> <br>
+			<input type="text" id="beneficjent" name="beneficjent" list="beneficienci" title="Wprowadź nazwę beneficjenta" required> <br>
+			<datalist id="beneficienci">
+				<option value="Wioski Dziecięce SOS">
+				<option value="Biedni studenci">
+				<option value="Pracownicy uniwersyteckie">
+				<option value="Kotki">
+			</datalist>
 			
 			<label for="wielkosc_dotacji">Wielkość dotacji: </label>
-			<input type="number" id="wielkosc_dotacji" name="wielkosc_dotacji" min="20" step="1" placeholder=">=20" title="Podaj wielkość dotacji" required>
+			<input type="number" id="wielkosc_dotacji" name="wielkosc_dotacji" min="20" step="5" placeholder=">=20" title="Podaj wielkość dotacji" required>
 		</fieldset>
 		<fieldset>
 			<legend>Dane karty płatniczej</legend>
@@ -32,7 +38,7 @@
 			<input type="text" id="cvv" name="cvv" pattern="[0-9]{3,4}" placeholder="3 lub 4 cyfry" title="Podaj poprawny kod CVV" required> <br>
 
 			<label for="darczynca">Darczyńca: </label>
-			<input type="text" id="darczynca" name="darczynca" pattern="[A-Za-ząćęłńóśźżĄĆĘŁŃÓŚŹŻ]{3,20}" placeholder="min. 3 znaki" title="Wprowadź imię darczyńcy" required>
+			<input type="text" id="darczynca" name="darczynca" pattern="[A-Za-ząćęłńóśźżĄĆĘŁŃÓŚŹŻ]{3,4}" placeholder="min. 3 znaki" title="Wprowadź imię darczyńcy" required>
 	</fieldset>
 
 	<input type="submit" value="Wyślij dotację">
