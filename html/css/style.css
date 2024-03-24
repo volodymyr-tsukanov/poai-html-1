@@ -1,8 +1,8 @@
 /* Default */
 /* - Containers */
 body {
-    background: white;
-    color: #000040;
+	background: white;
+	color: #000040;
 }
 
 header {
@@ -15,18 +15,18 @@ header {
 }
 
 nav {
-	order: 2;
+	order: 3;
 	width: 100%;
 }
 
 aside {
-	order: 4;
+	order: 5;
 	padding: 1%;
 	width: 18%;
 }
 
 footer {
-	order: 5;
+	order: 6;
 	width: 92%;
 	padding: 5px 0 5px 0;
 	background: #000040;
@@ -37,8 +37,8 @@ footer {
 
 /*  - Basic */
 h1, h2, h3 {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 /*  - Form */
@@ -52,28 +52,28 @@ textarea {
 
 /*  - Table */
 table {
-    background: #ffffb3;
-    text-align: center;
-    width: 94%;
-    margin: 2%;
-    border: 1pt solid #000040;
+	background: #ffffb3;
+	text-align: center;
+	width: 94%;
+	margin: 2%;
+	border: 1pt solid #000040;
 }
 
 caption {
-    font-size: 150%
+	font-size: 150%
 }
 
 tfoot, thead {
-    background: #0000a0;
-    color: #ffffff;
-    font-size: 120%
+	background: #0000a0;
+	color: #ffffff;
+	font-size: 120%
 }
 tfoot a {
-    color: #ffffff;
+	color: #ffffff;
 }
 
 td, th {
-    border: 1pt solid #000040;
+	border: 1pt solid #000040;
 }
 
 tbody tr:nth-child(2), tbody tr:nth-child(4) {
@@ -191,5 +191,8 @@ ul#nav li:hover ul {
 	}
 	aside {
 		width: 100%;
+	}
+	.info {
+		display: none;
 	}
 }

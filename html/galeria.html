@@ -1,21 +1,48 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Galeria </title>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Galeria </title>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script src="js/lightbox.js"></script>
 	<link rel="stylesheet" href="css/lightbox.css" />
+	<script src="js/swipe-slider.js"></script>
+	<link rel="stylesheet" href="css/swipe-slider.css" />
+	<!--link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"-->
 </head>
 <body>
-    <div id="kontener">
-        <header>
-            <h2>Szybki kurs HTML</h2>
-        </header>
-        <nav>
-            <ul id="nav">
+	<div id="kontener">
+		<header>
+			<h2>Szybki kurs HTML</h2>
+		</header>
+		
+		<div class="container">
+
+			<!-- Panels -->
+			<div class="swipe">
+				<div class="panel" data-img="images/full/obraz1.jpg"></div>
+				<div class="panel" data-img="images/full/obraz5.jpg"></div>
+				<div class="panel" data-img="images/full/obraz7.jpg"></div>
+				<div class="panel" data-img="images/full/obraz10.jpg"></div>
+			</div>
+
+			<!-- Info -->
+			<div class="info">
+				<div class="inner">
+					<h3>Simply swipe on any device!</h3>
+					<p>Use this buttons or your fingers. No matter what you do, no matter which device you choose, the picture will swipe and swipe again!</p>
+				</div>
+				<div class="buttons">
+					<button class="btn-prev" disabled>&larr;</button>
+					<button class="btn-next">&rarr;</button>
+				</div>
+			</div>
+		</div>
+
+		<nav>
+			<ul id="nav">
 				<li><a href="index.html">Podstawy</a></li>
 				<li><a href="tabele.html">Tabele</a></li>
 				<li><a href="">Formularze</a>
@@ -27,8 +54,8 @@
 				</li>
 				<li><a href="" title="">Galeria</a></li>
 			</ul>
-        </nav>
-        <div id="tresc">
+		</nav>
+		<div id="tresc">
 			<h3><center>Galeria zdjęć</center></h3> <br>
 			<div id="galeria">
 				<a href="images/full/obraz1.jpg" data-lightbox="galeria" data-title="Obraz 1">
@@ -62,7 +89,7 @@
 					<img src="images/thumbnails/obraz10.jpg" alt="Obraz 10">
 				</a>
 			</div>
-        </div>
+		</div>
 		<aside>
 			<div class="box">
 				<h3>Walidatory:</h3>
@@ -81,7 +108,7 @@
 				</ul>
 			</div>
 		</aside>
-        <footer> &copy;VT </footer>
-    </div>
+		<footer> &copy;VT </footer>
+	</div>
 </body>
 </html>
