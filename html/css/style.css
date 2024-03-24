@@ -1,8 +1,8 @@
 /* Default */
 /* - Containers */
 body {
-    background: white;
-    color: #000040;
+	background: white;
+	color: #000040;
 }
 
 header {
@@ -37,8 +37,9 @@ footer {
 
 /*  - Basic */
 h1, h2, h3 {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
+	text-align: center;
 }
 
 /*  - Form */
@@ -52,28 +53,28 @@ textarea {
 
 /*  - Table */
 table {
-    background: #ffffb3;
-    text-align: center;
-    width: 94%;
-    margin: 2%;
-    border: 1pt solid #000040;
+	background: #ffffb3;
+	text-align: center;
+	width: 94%;
+	margin: 2%;
+	border: 1pt solid #000040;
 }
 
 caption {
-    font-size: 150%
+	font-size: 150%
 }
 
 tfoot, thead {
-    background: #0000a0;
-    color: #ffffff;
-    font-size: 120%
+	background: #0000a0;
+	color: #ffffff;
+	font-size: 120%
 }
 tfoot a {
-    color: #ffffff;
+	color: #ffffff;
 }
 
 td, th {
-    border: 1pt solid #000040;
+	border: 1pt solid #000040;
 }
 
 tbody tr:nth-child(2), tbody tr:nth-child(4) {
@@ -99,9 +100,19 @@ tbody tr:nth-child(2), tbody tr:nth-child(4) {
 	padding: 1%;
 	border-radius: 3px;
 }
-#tresc img {
-	width: 250px;
-	margin: 5px 20px 5px 20px;
+
+#galeria {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+#galeria a {
+	flex: 30%;
+	padding: 2px 2px 8px 2px;
+}
+#galeria img {
+	width: 180px;
 }
 
 #nav {
@@ -176,6 +187,9 @@ ul#nav li:hover ul {
 	border-radius: 8px 3px 0 6px;
 	box-shadow: 1px 3px navajowhite;
 }
+*.box h3 {
+	text-align: left;
+}
 *.box a {
 	color: #ffffb0
 }
@@ -183,6 +197,20 @@ ul#nav li:hover ul {
 
 
 /* Screen size */
+@media screen and (max-width: 860px) {
+	nav li {
+		font-size: 14px;
+		width: 20%;
+		margin-bottom: 4px;
+	}
+	#galeria a {
+		flex: 22%;
+		padding: 1px 1px 5px 1px;
+	}
+	#galeria img {
+		width: 150px;
+	}
+}
 @media screen and (max-width: 720px) {
 	nav li {
 		font-size: 18px;
@@ -194,6 +222,13 @@ ul#nav li:hover ul {
 		font-size: 20px;
 	}
 	aside {
+		width: 100%;
+	}
+	#galeria a {
+		flex: 100%;
+		padding: 0 0 2px 0;
+	}
+	#galeria img {
 		width: 100%;
 	}
 }

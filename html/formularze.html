@@ -34,9 +34,10 @@
                 <li>&lt;textarea&gt; - pole tekst</li>
                 <li>&lt;button&gt; - przycisk</li>
             </ul>
-            <form action="mailto:vt@cs.pollub.pl" method="post">
-                <label for="login">Podaj login: </label> <input type="text" id="login" name="login" /> <br>
-                <label for="haslo">Podaj hasło: </label> <input type="password" id="haslo" name="pass" /> <br><br>
+            <form action="#" method="get">
+                <label for="login">Podaj login: </label> <input type="text" id="login" name="login" pattern="[0-9A-Za-z]{3,20}" title="Wprowadź login" required/> <br>
+                <label for="haslo">Podaj hasło: </label> <input type="password" id="haslo" name="pass" pattern="{4,16}" title="Wprowadź hasło" required/> <br>
+                <label for="email">Podaj email: </label> <input type="email" id="email" name="email" placeholder="format: xxx@xxx.xxx" title="Wprowadź email"/> <br><br>
                 Wybierz ulubione języki programowania: <br>
                 <input type="checkbox" name="C" value="C" /> Język C/C++
                 <input type="checkbox" name="Java" value="J" required/> Język Java
@@ -56,8 +57,8 @@
                     <option value="s">Sport</option>
                     <option value="i">Inne</option>
                 </select><br>
-				<textarea cols="10" rows="3" name="opinia">Po prostu lubię.</textarea><br>
-				<input type="submit" value="Wyślij" class="btn" />
+                <textarea cols="10" rows="3" name="opinia">Po prostu lubię.</textarea> <br>
+		<input type="submit" value="Wyślij" class="btn" />
                 <input type="reset" value="Wyczyść" class="btn" />
             </form>
         </div>
