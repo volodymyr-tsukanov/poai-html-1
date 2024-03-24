@@ -89,6 +89,10 @@ $(document).ready(function(){
   });
 
   //Buttons:
+  $('.btn-clos').click(function(){
+	  $('.info').hide();
+  });
+  
   $(".btn-prev").click(function(){
     // Swipe left:
     if (active > 1) {

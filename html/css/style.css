@@ -203,6 +203,9 @@ ul#nav li:hover ul {
 		width: 20%;
 		margin-bottom: 4px;
 	}
+	.info {
+		display: none;
+	}
 	#galeria a {
 		flex: 22%;
 		padding: 1px 1px 5px 1px;
