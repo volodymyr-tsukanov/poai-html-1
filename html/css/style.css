@@ -99,9 +99,19 @@ tbody tr:nth-child(2), tbody tr:nth-child(4) {
 	padding: 1%;
 	border-radius: 3px;
 }
-#tresc img {
-	width: 250px;
-	margin: 5px 20px 5px 20px;
+
+#galeria {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+#galeria a {
+	flex: 32%;
+	padding: 2px 2px 8px 2px;
+}
+#galeria img {
+	width: 210px;
 }
 
 #nav {
@@ -183,6 +193,20 @@ ul#nav li:hover ul {
 
 
 /* Screen size */
+@media screen and (max-width: 840px) {
+	nav li {
+		font-size: 14px;
+		width: 20%;
+		margin-bottom: 4px;
+	}
+	#galeria a {
+		flex: 22%;
+		padding: 1px 1px 5px 1px;
+	}
+	#galeria img {
+		width: 160px;
+	}
+}
 @media screen and (max-width: 720px) {
 	nav li {
 		font-size: 18px;
@@ -194,6 +218,13 @@ ul#nav li:hover ul {
 		font-size: 20px;
 	}
 	aside {
+		width: 100%;
+	}
+	#galeria a {
+		flex: 100%;
+		padding: 0 0 2px 0;
+	}
+	#galeria img {
 		width: 100%;
 	}
 }
