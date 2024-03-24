@@ -1,5 +1,5 @@
-# Lab 9
-Zastosowania biblioteki jQuery w aplikacji internetowej. </br>
+# Lab 10
+Tworzenie responsywnego szablonu strony z zastosowaniem szkieletu Bootstrap. </br>
 
 ## Used packages
   - [jQuery](https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js)
