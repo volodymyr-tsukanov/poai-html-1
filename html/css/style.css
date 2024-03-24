@@ -39,6 +39,7 @@ footer {
 h1, h2, h3 {
 	margin: 0;
 	padding: 0;
+	text-align: center;
 }
 
 /*  - Form */
@@ -98,6 +99,20 @@ tbody tr:nth-child(2), tbody tr:nth-child(4) {
 	background: #c2e7ff;
 	padding: 1%;
 	border-radius: 3px;
+}
+
+#galeria {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+#galeria a {
+	flex: 30%;
+	padding: 2px 2px 8px 2px;
+}
+#galeria img {
+	width: 180px;
 }
 
 #nav {
@@ -172,6 +187,9 @@ ul#nav li:hover ul {
 	border-radius: 8px 3px 0 6px;
 	box-shadow: 1px 3px navajowhite;
 }
+*.box h3 {
+	text-align: left;
+}
 *.box a {
 	color: #ffffb0
 }
@@ -179,6 +197,20 @@ ul#nav li:hover ul {
 
 
 /* Screen size */
+@media screen and (max-width: 860px) {
+	nav li {
+		font-size: 14px;
+		width: 20%;
+		margin-bottom: 4px;
+	}
+	#galeria a {
+		flex: 22%;
+		padding: 1px 1px 5px 1px;
+	}
+	#galeria img {
+		width: 150px;
+	}
+}
 @media screen and (max-width: 720px) {
 	nav li {
 		font-size: 18px;
@@ -194,5 +226,12 @@ ul#nav li:hover ul {
 	}
 	.info {
 		display: none;
+	}
+	#galeria a {
+		flex: 100%;
+		padding: 0 0 2px 0;
+	}
+	#galeria img {
+		width: 100%;
 	}
 }
