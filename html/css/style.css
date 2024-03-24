@@ -1,11 +1,12 @@
 body {
-    background: white;
-    color: #000040;
+	background: white;
+	color: #000040;
 }
 
 h1, h2, h3 {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
+	text-align: center;
 }
 
 label {
@@ -17,38 +18,38 @@ textarea {
 }
 
 table {
-    background: #ffffb3;
-    text-align: center;
-    width: 94%;
-    margin: 2%;
-    border: 1pt solid #000040;
+	background: #ffffb3;
+	text-align: center;
+	width: 94%;
+	margin: 2%;
+	border: 1pt solid #000040;
 }
 
 caption {
-    font-size: 150%
+	font-size: 150%
 }
 
 tfoot, thead {
-    background: #0000a0;
-    color: #ffffff;
-    font-size: 120%
+	background: #0000a0;
+	color: #ffffff;
+	font-size: 120%
 }
 tfoot a {
-    color: #ffffff;
+	color: #ffffff;
 }
 
 td, th {
-    border: 1pt solid #000040;
+	border: 1pt solid #000040;
 }
 
 tbody tr:nth-child(2), tbody tr:nth-child(4) {
-	  background: white;
+	background: white;
 }
 
 h1, h2, header, footer {
-    background: #000040;
-    color: #f0f0ff;
-    text-align: center;
+	background: #000040;
+	color: #f0f0ff;
+	text-align: center;
 }
 
 header {
@@ -91,7 +92,7 @@ footer {
 	order: 5;
 	flex-grow: 7;
 	width: 70%;
-  background: #c2e7ff;
+	background: #c2e7ff;
 	padding: 1%;
 	border-radius: 3px;
 }
@@ -140,10 +141,26 @@ ul#nav li:hover ul {
 	width: 177px;
 }
 
+#galeria {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+#galeria a {
+	flex: 32%;
+	padding: 2px 2px 8px 2px;
+}
+#galeria img {
+	width: 210px;
+}
+
 #link {
 	color: #ffffff;
 	text-decoration: underline;
 }
+
+
 
 *.btn {
 	background: red;
@@ -164,6 +181,21 @@ ul#nav li:hover ul {
 }
 
 
+
+@media screen and (max-width: 840px) {
+	nav li {
+		font-size: 14px;
+		width: 20%;
+		margin-bottom: 4px;
+	}
+	#galeria a {
+		flex: 22%;
+		padding: 1px 1px 5px 1px;
+	}
+	#galeria img {
+		width: 160px;
+	}
+}
 @media screen and (max-width: 720px) {
 	nav li {
 		font-size: 18px;
@@ -175,6 +207,13 @@ ul#nav li:hover ul {
 		font-size: 20px;
 	}
 	aside {
+		width: 100%;
+	}
+	#galeria a {
+		flex: 100%;
+		padding: 0 0 2px 0;
+	}
+	#galeria img {
 		width: 100%;
 	}
 }
