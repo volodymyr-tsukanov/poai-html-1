@@ -10,7 +10,7 @@
     <div id="kontener">
         <header>
             <h2>Szybki kurs HTML</h2>
-        </header> <br>
+        </header>
         <nav>
             <ul id="nav">
 				<li><a href="index.html">Podstawy</a></li>
@@ -19,11 +19,12 @@
 					<ul>
 						<li><a href="formularze.html" >Pola formularza</a></li>
 						<li><a href="obliczenia.html" >Obliczenia w formularzu</a></li>
+						<li><a href="kalkulator.html" >Kalkulatorek</a></li>
 					</ul>
 				</li>
 				<li><a href="galeria.html">Galeria</a></li>
 			</ul>
-        </nav> <br>
+        </nav>
         <div id="tresc">
 	    <h3>Podstawowe znaczniki do formularzy to:</h3>
             <ul>
@@ -35,8 +36,9 @@
             </ul>
             <form action="#" method="get">
                 <label for="login">Podaj login: </label> <input type="text" id="login" name="login" pattern="[0-9A-Za-z]{3,20}" title="Wprowadź login" required/> <br>
-                <label for="haslo">Podaj hasło: </label> <input type="password" id="haslo" name="pass" pattern="{4,16}" title="Wprowadź hasło" required/> <br>
-                <label for="email">Podaj email: </label> <input type="email" id="email" name="email" placeholder="format: xxx@xxx.xxx" title="Wprowadź email"/> <br><br>
+                <label for="haslo">Podaj hasło: </label> <input type="password" id="haslo" name="pass" pattern=".{6,16}" title="Wprowadź hasło" required/> <br>
+                <label for="email">Podaj email: </label> <input type="email" id="email" name="email" placeholder="format: xxx@xxx.xxx" title="Wprowadź email" required/> <br>
+                <label for="wiek">Podaj wiek: </label> <input type="number" id="wiek" name="wiek" min="8" max="99" title="Wprowadź wiek" required/> <br><br>
                 Wybierz ulubione języki programowania: <br>
                 <input type="checkbox" name="C" value="C" /> Język C/C++
                 <input type="checkbox" name="Java" value="J" required/> Język Java
@@ -79,7 +81,7 @@
 				</ul>
 			</div>
 		</aside>
-		<footer> &copy;BP </footer>
+		<footer> &copy;VT </footer>
     </div>
 </body>
 </html>
