@@ -65,21 +65,23 @@ footer {
 }
 
 
-/*@media screen and (max-width: 720px) {
+@media screen and (max-width: 720px) {
 	body {
-		background: red;
+		background: #d4c7b9;
 	}
 	nav, footer {
-		background: #d4c7b9;
+		background: #45525a;
 		color: #ffe9ba;
 		border-radius: 10px;
 	}
-	nav a { width: 48%;
-		padding: 10px 0;
-		font-size: 140%;
+	nav a { width: 96%;
+		padding: 5px 0;
+		font-size: 180%;
+		width: 45%;
 	}
 	.slajd { width: 45%; }
-}*/
+	.slajd img { width: 85%; }
+}
 @media screen and (min-width: 481px) and (max-width: 720px) {
 	body { font-size: 13px; }
 	h1 { font-size: 23px; }
@@ -97,24 +99,35 @@ footer {
 	nav a { width: 96%;
 		padding: 5px 0;
 		font-size: 180%;
+		width: 100%;
 	}
-	.slajd { width: 30%; }
+	.slajd { width: 100%; }
+	.slajd img { width: 80%; }
 }
 @media only screen and (min-width : 768px)
 and (max-width : 1024px)
 and (orientation : landscape) {
 	body {
 		background: #45525a;
+		color: #ced1d6;
 	}
 	nav, footer {
 		background: #d4c7b9;
-		color: #ffe9ff;
+		color: white;
 		border-radius: 10px;
 	}
-	nav a { width: 36%;
-		color: #000000;
-		padding: 10px 0;
-		font-size: 160%;
+	h1, h2, h3 {
+		color: white;
 	}
-	.slajd { width: 50%; }
+	nav a { width: 36%;
+		color: #3c3c3d;
+		font-size: 160%;
+		width: 45%;
+	}
+	.slajd {
+		background: #696b6e;
+		width: 45%;
+	}
+	.slajd:hover { background: #c0c7d1; }
+	.slajd img { width: 65%; }
 }
