@@ -1,9 +1,3 @@
-.slider-container {
-	max-width: 800px;
-	margin: 0 auto;
-	padding: 50px;
-}
-
 #slider-next, #slider-prev {
 	position: relative;
 	display: inline-block;
@@ -24,6 +18,13 @@
 }
 #slider-next:hover {
 	transform: translateX(10px) scale(1.2);
+}
+
+
+.slider-container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 50px;
 }
 
 .slider-nav ul {
@@ -47,6 +48,7 @@
 }
 .slider-img-active {
 	display: block;
+	height: 350px;
 	animation: fadeImg 0.8s;
 }
 
