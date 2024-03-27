@@ -7,5 +7,6 @@ Tworzenie responsywnego szablonu strony z zastosowaniem szkieletu Bootstrap. </b
   - [Slider](http://jonraasch.com/blog/a-simple-jquery-slideshow)
   - [Swipe Slider](https://codepen.io/tobiasdev/pen/MoEodz)
   - [Small Business](https://startbootstrap.com/template/small-business)
+  - Auto Slider
 
 **HTML**; **CSS**; **JavaScript**
