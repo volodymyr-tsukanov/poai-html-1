@@ -4,4 +4,4 @@ za pomocą języka skryptowego JavaScript.
 Realizacja obsługi zdarzeń na stronie WWW z zastosowaniem modelu DOM.
 Korzystanie z konsoli JavaScript dostępnej w przeglądarce internetowej. </br>
 
-**HTML**; **CSS**, **JavaScript**
+**HTML**; **CSS**; **JavaScript**
