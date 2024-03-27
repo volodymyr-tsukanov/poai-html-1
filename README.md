@@ -1,5 +1,5 @@
-# Lab 10
-Tworzenie responsywnego szablonu strony z zastosowaniem szkieletu Bootstrap. </br>
+# Lab 11
+Budowa aplikacji wykorzystującej geolokację i lokalne magazyny danych. </br>
 
 ## Used packages
   - [jQuery](https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js)
@@ -9,4 +9,4 @@ Tworzenie responsywnego szablonu strony z zastosowaniem szkieletu Bootstrap. </b
   - [Small Business](https://startbootstrap.com/template/small-business)
   - Auto Slider
 
-**HTML**; **CSS**; **JavaScript**
+**HTML**; **CSS**; **JavaScript**; **JSON**
