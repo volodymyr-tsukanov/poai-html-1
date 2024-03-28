@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title> Session Storage </title>
+	<title> Local Storage </title>
 </head>
 <body>
 	<form action="#" method="get" onsubmit="save()">
@@ -22,16 +22,16 @@
 	function save() {
 		let key = document.getElementById('color-code').value;
 		let val = document.getElementById('color-name').value;
-		if(sessionStorage.getItem(key)){
+		if(localStorage.getItem(key)){
 			if(confirm('That keypair already exists. Rewrite?')){
-				sessionStorage.setItem(key, val);
+				localStorage.setItem(key, val);
 				document.getElementById('color-code').value = '';
 				document.getElementById('color-name').value = '';
 				showAll();
 			}
 		}
 		else{
-			sessionStorage.setItem(key, val);
+			localStorage.setItem(key, val);
 			document.getElementById('color-code').value = '';
 			document.getElementById('color-name').value = '';
 			showAll();
@@ -40,13 +40,13 @@
 	
 	function showAll() {
 		document.getElementById('data-container').style = '';
-		if(sessionStorage.length == 0) document.getElementById('data').innerHTML = 'Nothing to show...';
+		if(localStorage.length == 0) document.getElementById('data').innerHTML = 'Nothing to show...';
 		else{
 			let dt = document.getElementById('data');
 			dt.innerHTML = '';
-			for(var i=0; i<sessionStorage.length; i++){
-				let key = sessionStorage.key(i);
-				let val = sessionStorage.getItem(key);
+			for(var i=0; i<localStorage.length; i++){
+				let key = localStorage.key(i);
+				let val = localStorage.getItem(key);
 				dt.innerHTML += '<div style="flex:30%;width:fit-content;margin:2px;padding:8px;border-radius:6px;background:#'+key+'"><div style="background:white">('+(i+1)+') '+val+', kod koloru: '+key+'</div></div><br>';
 			}
 		}
@@ -54,7 +54,7 @@
 	
 	function clearAll() {
 		if(confirm('Confirm clear action')){
-			sessionStorage.clear();
+			localStorage.clear();
 			document.getElementById('color-code').value = '';
 			document.getElementById('color-name').value = '';
 			showAll();
