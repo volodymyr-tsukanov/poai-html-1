@@ -13,12 +13,31 @@
 			<label for="product-price">Cena: </label> <input type="number" id="product-price" min="1" max="1000" title="Wprowadź cenę produktu" required> <br>
 			<label for="product-color">Kolor: </label> <input type="color" id="product-color" title="Wprowadź kolor produktu" required> <br>
 			<label for="product-quantity">Liczba sztuk: </label> <input type="number" id="product-quantity" min="1" max="50" title="Wprowadź ilość produktów" required> <br>
+			<input type="submit" value="Do koszyka">
 		</fieldset>
-		<input type="submit" value="Do koszyka"> <button onclick="showAll()">Wyświetl koszyk</button> <button onclick="clearAll()">Opróżnij koszyk</button>
 	</form>
+	<button onclick="showAll()">Wyświetl koszyk</button> <button onclick="clearAll()">Opróżnij koszyk</button>
 	<div id="data-container" style="display:none">
-		<h2>Dane</h2>
-		<div id="data"></div>
+		<table style="background:#454554;text-align:center;width:94%;margin:2%;border:2pt solid #ffffff">
+			<caption><h2>Zawartość koszyka</h2></caption>
+			<thead style="background:#000000;color:#ffffff;font-size:120%">
+				<tr>
+					<th colspan="6">
+						<button onclick="showFiltred()">Filter</button>
+						<button onclick="clearFilters()">Clear filters</button>
+					</th>
+				</tr>
+				<tr>
+					<th><label>Nm.</label></th>
+					<th><label for="filter-p_nm">Name: </label><input type="text" id="filter-p_nm" placeholder="Filter by product name"></th>
+					<th><label for="filter-p_pr">Price: </label><input type="number" id="filter-p_pr" placeholder="Filter by product price"></th>
+					<th><label for="filter-p_cr">Color: </label><input type="text" id="filter-p_cr" placeholder="Filter by product color"></th>
+					<th><label for="filter-p_qt">Quantity: </label><input type="text" id="filter-p_qt" placeholder="Filter by product quantity"></th>
+					<th><label>Actions</label></th>
+				</tr>
+			</thead>
+			<tbody id="table-data" style="color:#dbdbdb"></tbody>
+		</table>
 	</div>
 	
 	<script>
@@ -36,22 +55,71 @@
 		document.getElementById('product-quantity').value = '';
 	}
 	
+	function showByIndex(indexes) {
+		document.getElementById('data-container').style = '';
+		if(indexes.length == 0) document.getElementById('table-data').innerHTML = 'Nothing to filter/show...';
+		else{
+			let dt = document.getElementById('table-data');
+			dt.innerHTML = '';
+			for(let i=0; i<indexes.length; i++){
+				let item = JSON.parse(localStorage.getItem('item_'+indexes[i]));
+				dt.innerHTML += '<tr><td>'+(i+1)+'</td><td>'+item.name+'</td><td>'+item.price+'</td><td><div style="border-radius:5px;background:'+item.color+'">'+item.color+'</div></td><td>'+item.quantity+'</td><td><button onclick="clearByIndex('+i+')">Remove</button></td></tr>';
+			}
+		}
+	}
 	function showAll() {
 		document.getElementById('data-container').style = '';
-		if(localStorage.length == 0) document.getElementById('data').innerHTML = 'Nothing to show...';
+		if(localStorage.length == 0) document.getElementById('data-container').innerHTML = 'Nothing to show...';
 		else{
-			let table_html = '<table style="background:#454554;text-align:center;width:94%;margin:2%;border:2pt solid #ffffbf"><thead style="background:#000000;color:#ffffff;font-size:120%"><tr><th>Nm.</th><th>Name</th><th>Price</th><th>Color</th><th>Quantity</th></tr></thead><tbody style="color:#dbdbdb">';
-			for(var i=0; i<localStorage.length; i++){
+			let dt = document.getElementById('table-data');
+			dt.innerHTML = '';
+			for(let i=0; i<localStorage.length; i++){
 				let item = JSON.parse(localStorage.getItem('item_'+i));
-				table_html += '<tr><td>'+(i+1)+'</td><td>'+item.name+'</td><td>'+item.price+'</td><td><div style="border-radius:5px;background:'+item.color+'">'+item.color+'</div></td><td>'+item.quantity+'</td></tr>';
+				dt.innerHTML += '<tr><td>'+(i+1)+'</td><td>'+item.name+'</td><td>'+item.price+'</td><td><div style="border-radius:5px;background:'+item.color+'">'+item.color+'</div></td><td>'+item.quantity+'</td><td><button onclick="clearByIndex('+i+')">Remove</button></td></tr>';
 			}
-			table_html += '</tbody></table>';
-			document.getElementById('data').innerHTML = table_html;
 		}
 	}
 	
+	function clearFilters() {
+		showAll();
+		document.getElementById('filter-p_nm').value = '';
+		document.getElementById('filter-p_pr').value = '';
+		document.getElementById('filter-p_cr').value = '';
+		document.getElementById('filter-p_qt').value = '';
+	}
+	function showFiltred() {
+		let indexes = [];
+		let f_nm = document.getElementById('filter-p_nm').value;
+		let f_pr = document.getElementById('filter-p_pr').value;
+		let f_cr = document.getElementById('filter-p_cr').value;
+		let f_qt = document.getElementById('filter-p_qt').value;
+		
+		for(let i=0; i<localStorage.length; i++){
+			let item = JSON.parse(localStorage.getItem('item_'+i));
+			let p = true;
+			
+			if(p && f_nm && !item.name.includes(f_nm)) p = false;
+			else if(p && f_pr && item.price != f_pr) p = false;
+			else if(p && f_cr && item.color.toString().includes(f_cr)) p = false;
+			else if(p && f_qt && item.quantity != f_qt) p = false;
+			if(p) indexes.push(i);
+		}
+		
+		showByIndex(indexes);
+	}
+	
+	function clearByIndex(index) {
+		if(confirm('Confirm clear_by_index action')){
+			if(index < 0 || index >= localStorage.length) alert('!Wrong index!');
+			else{
+				for(let i=index; i<localStorage.length-1; i++) localStorage.setItem('item_'+i, localStorage.getItem('item_'+(i+1)));
+				localStorage.removeItem('item_'+(localStorage.length-1));
+				showAll();
+			}
+		}
+	}
 	function clearAll() {
-		if(confirm('Confirm clear action')){
+		if(confirm('Confirm clear_all action')){
 			localStorage.clear();
 			document.getElementById('product-name').value = '';
 			document.getElementById('product-price').value = '';
