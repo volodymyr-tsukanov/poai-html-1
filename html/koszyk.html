@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Koszyk JSON </title>
+</head>
+<body>
+	<form action="#" method="get" onsubmit="save()">
+		<fieldset>
+			<legend>Produkt</legend>
+			<label for="product-name">Nazwa: </label> <input type="text" id="product-name" pattern="[0-9A-Za-z]{4,20}" title="Wprowadź nazwę produktu" required> <br>
+			<label for="product-price">Cena: </label> <input type="number" id="product-price" min="1" max="1000" title="Wprowadź cenę produktu" required> <br>
+			<label for="product-color">Kolor: </label> <input type="color" id="product-color" title="Wprowadź kolor produktu" required> <br>
+			<label for="product-quantity">Liczba sztuk: </label> <input type="number" id="product-quantity" min="1" max="50" title="Wprowadź ilość produktów" required> <br>
+		</fieldset>
+		<input type="submit" value="Do koszyka"> <button onclick="showAll()">Wyświetl koszyk</button> <button onclick="clearAll()">Opróżnij koszyk</button>
+	</form>
+	<div id="data-container" style="display:none">
+		<h2>Dane</h2>
+		<div id="data"></div>
+	</div>
+	
+	<script>
+	function save() {
+		let item = {};
+		item.name = document.getElementById('product-name').value;
+		item.price = document.getElementById('product-price').value;
+		item.color = document.getElementById('product-color').value;
+		item.quantity = document.getElementById('product-quantity').value;
+		localStorage.setItem('item_'+localStorage.length, JSON.stringify(item));
+		
+		document.getElementById('product-name').value = '';
+		document.getElementById('product-price').value = '';
+		document.getElementById('product-color').value = '';
+		document.getElementById('product-quantity').value = '';
+	}
+	
+	function showAll() {
+		document.getElementById('data-container').style = '';
+		if(localStorage.length == 0) document.getElementById('data').innerHTML = 'Nothing to show...';
+		else{
+			let table_html = '<table style="background:#454554;text-align:center;width:94%;margin:2%;border:2pt solid #ffffbf"><thead style="background:#000000;color:#ffffff;font-size:120%"><tr><th>Nm.</th><th>Name</th><th>Price</th><th>Color</th><th>Quantity</th></tr></thead><tbody style="color:#dbdbdb">';
+			for(var i=0; i<localStorage.length; i++){
+				let item = JSON.parse(localStorage.getItem('item_'+i));
+				table_html += '<tr><td>'+(i+1)+'</td><td>'+item.name+'</td><td>'+item.price+'</td><td><div style="border-radius:5px;background:'+item.color+'">'+item.color+'</div></td><td>'+item.quantity+'</td></tr>';
+			}
+			table_html += '</tbody></table>';
+			document.getElementById('data').innerHTML = table_html;
+		}
+	}
+	
+	function clearAll() {
+		if(confirm('Confirm clear action')){
+			localStorage.clear();
+			document.getElementById('product-name').value = '';
+			document.getElementById('product-price').value = '';
+			document.getElementById('product-color').value = '';
+			document.getElementById('product-quantity').value = '';
+			showAll();
+		}
+	}
+	</script>
+</body>
+</html>
