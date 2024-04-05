@@ -1,5 +1,6 @@
-# Lab 11
-Budowa aplikacji wykorzystującej geolokację i lokalne magazyny danych. </br>
+# Lab 12
+Wykorzystanie elementów programowania obiektowego w javascript.
+Realizacja aplikacji pracującej z danymi w formacie json. </br>
 
 ## Used packages
   - [jQuery](https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js)
