@@ -9,4 +9,4 @@ Budowa aplikacji wykorzystującej geolokację i lokalne magazyny danych. </br>
   - [Small Business](https://startbootstrap.com/template/small-business)
   - Auto Slider
 
-**HTML**; **CSS**; **JavaScript**; **JSON**
+**HTML**; **CSS**; **JavaScript**; **JSON**; **Google Maps API**
