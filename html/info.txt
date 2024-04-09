@@ -2,18 +2,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> tst </title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> tst </title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div id="kontener">
-        <div id="baner">
-            <h2>Szybki kurs HTML</h2>
-        </div> <br>
-        <div id="menu">
-            <ul id="nav">
+	<div id="kontener">
+		<header>
+			<h2>Szybki kurs HTML</h2>
+		</header> <br>
+		<nav>
+			<ul>
 				<li><a href="index.html">Podstawy</a></li>
 				<li><a href="tabele.html">Tabele</a></li>
 				<li><a href="">Formularze</a>
@@ -24,10 +24,10 @@
 				</li>
 				<li><a href="" title="">Galeria</a></li>
 			</ul>
-        </div> <br>
-        <div id="tresc">
-        </div> <br>
-		<div id="pasek">
+		</nav> <br>
+		<div id="tresc">
+		</div> <br>
+		<aside>
 			<div class="box">
 				<h3>Walidatory:</h3>
 				<ul>
@@ -44,8 +44,8 @@
 					<li> <a href="https://www.w3schools.com/php/"> PHP </a></li>
 				</ul>
 			</div>
-		</div>
-        <div id="stopka"> &copy;BP </div>
-    </div>
+		</aside>
+		<footer> &copy;BP </footer>
+	</div>
 </body>
 </html>

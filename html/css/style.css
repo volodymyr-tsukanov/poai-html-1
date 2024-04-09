@@ -116,12 +116,12 @@ tbody tr:nth-child(2), tbody tr:nth-child(4) {
 	border-radius: 3px;
 }
 
-#nav {
+nav ul {
 	text-align: left;
 	overflow: hidden;
 	font-family: calibri, tahoma;
 }
-ul#nav li {
+nav ul li {
 	border: 1px solid #d5d5d5;
 	list-style-type: none;
 	float: left;
@@ -130,29 +130,29 @@ ul#nav li {
 	border-radius: 0 4px 0 6px;
 	box-shadow: 2px 1px blueviolet;
 }
-ul#nav li:hover {
+nav ul li:hover {
 	border: 1px solid #d5d5d5;
 	list-style-type: none;
 	float: left;
 	background: #f0f0f0;
 	margin-left: 3px;
 }
-ul#nav li a {
+nav ul li a {
 	display: block;
 	padding: 4pt;
 	text-decoration: none;
 }
-ul#nav li li a {
+nav ul li li a {
 	width: 160px;
 }
-ul#nav li li:hover {
+nav ul li li:hover {
 	background: white;
 }
-ul#nav li ul {
+nav ul li ul {
 	overflow: hidden;
 	display: none;
 }
-ul#nav li:hover ul {
+nav ul li:hover ul {
 	position: absolute;
 	background: #aaa;
 	padding: 0;
@@ -198,11 +198,17 @@ ul#nav li:hover ul {
 
 
 /* Screen size */
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 860px) and (orientation : landscape) {
 	nav li {
 		font-size: 14px;
 		width: 20%;
 		margin-bottom: 4px;
+	}
+	nav ul li:hover ul li {
+		width: 95%;
+	}
+	#tresc {
+		font-size: 115%;
 	}
 	#galeria a {
 		flex: 22%;
@@ -213,7 +219,7 @@ ul#nav li:hover ul {
 		border-radius: 6px;
 	}
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 720px) and (orientation : portrait) {
 	nav li {
 		font-size: 18px;
 		width: 90%;
@@ -221,7 +227,7 @@ ul#nav li:hover ul {
 	}
 	#tresc {
 		width: 100%;
-		font-size: 20px;
+		font-size: 140%;
 	}
 	aside {
 		width: 100%;

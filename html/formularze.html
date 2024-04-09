@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Forms </title>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Forms </title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <div id="kontener">
-        <header>
-            <h2>Szybki kurs HTML</h2>
-        </header>
-        <nav>
-            <ul id="nav">
+	<div id="kontener">
+		<header>
+			<h2>Szybki kurs HTML</h2>
+		</header>
+		<nav>
+			<ul>
 				<li><a href="index.html">Podstawy</a></li>
 				<li><a href="tabele.html">Tabele</a></li>
 				<li><a href="">Formularze</a>
@@ -24,45 +24,45 @@
 				</li>
 				<li><a href="galeria.html">Galeria</a></li>
 			</ul>
-        </nav>
-        <div id="tresc">
-	    <h3>Podstawowe znaczniki do formularzy to:</h3>
-            <ul>
-                <li>&lt;form&gt; - korzeń formularza</li>
-                <li>&lt;input&gt; - pole tekstowe, radio, chekbox</li>
-                <li>&lt;select&gt; - lista</li>
-                <li>&lt;textarea&gt; - pole tekst</li>
-                <li>&lt;button&gt; - przycisk</li>
-            </ul>
-            <form action="#" method="get">
-                <label for="login">Podaj login: </label> <input type="text" id="login" name="login" pattern="[0-9A-Za-z]{3,20}" title="Wprowadź login" required/> <br>
-                <label for="haslo">Podaj hasło: </label> <input type="password" id="haslo" name="pass" pattern=".{6,16}" title="Wprowadź hasło" required/> <br>
-                <label for="email">Podaj email: </label> <input type="email" id="email" name="email" placeholder="format: xxx@xxx.xxx" title="Wprowadź email" required/> <br>
-                <label for="wiek">Podaj wiek: </label> <input type="number" id="wiek" name="wiek" min="8" max="99" title="Wprowadź wiek" required/> <br><br>
-                Wybierz ulubione języki programowania: <br>
-                <input type="checkbox" name="C" value="C" /> Język C/C++
-                <input type="checkbox" name="Java" value="J" required/> Język Java
-                <input type="checkbox" name="PHP" value="PHP" /> Język PHP <br>
-                Wybierz przeglądarkę, z której korzystasz najczęściej: <br>
-                <input type="radio" name="przegladarka" value="Ff" required/> Firefox <br>
-                <input type="radio" name="przegladarka" value="Ch" /> Chrome <br>
-                <input type="radio" name="przegladarka" value="II" />
-                Internet Explorer<br>
-                <!-- Inne znaczniki pól formularza -->
-                <br>Wskaż hobby i uzasadnij dlaczego to lubisz:
-                <br>
-                <select size="3" name="hobby" multiple="multiple" required>
-                    <option value="t">Turystyka</option>
-                    <option value="m">Muzyka</option>
-                    <option value="f">Film</option>
-                    <option value="s">Sport</option>
-                    <option value="i">Inne</option>
-                </select><br>
-                <textarea cols="10" rows="3" name="opinia">Po prostu lubię.</textarea> <br>
-		<input type="submit" value="Wyślij" class="btn" />
-                <input type="reset" value="Wyczyść" class="btn" />
-            </form>
-        </div>
+		</nav>
+		<div id="tresc">
+			<h3>Podstawowe znaczniki do formularzy to:</h3>
+			<ul>
+				<li>&lt;form&gt; - korzeń formularza</li>
+				<li>&lt;input&gt; - pole tekstowe, radio, chekbox</li>
+				<li>&lt;select&gt; - lista</li>
+				<li>&lt;textarea&gt; - pole tekst</li>
+				<li>&lt;button&gt; - przycisk</li>
+			</ul>
+			<form action="#" method="get">
+				<label for="login">Podaj login: </label> <input type="text" id="login" name="login" pattern="[0-9A-Za-z]{3,20}" title="Wprowadź login" required> <br>
+				<label for="haslo">Podaj hasło: </label> <input type="password" id="haslo" name="pass" pattern=".{6,16}" title="Wprowadź hasło" required> <br>
+				<label for="email">Podaj email: </label> <input type="email" id="email" name="email" placeholder="format: xxx@xxx.xxx" title="Wprowadź email" required> <br>
+				<label for="wiek">Podaj wiek: </label> <input type="number" id="wiek" name="wiek" min="8" max="99" title="Wprowadź wiek" required> <br><br>
+				Wybierz ulubione języki programowania: <br>
+				<input type="checkbox" name="C" value="C"> Język C/C++
+				<input type="checkbox" name="Java" value="J" required> Język Java
+				<input type="checkbox" name="PHP" value="PHP"> Język PHP <br>
+				Wybierz przeglądarkę, z której korzystasz najczęściej: <br>
+				<input type="radio" name="przegladarka" value="Ff" required> Firefox <br>
+				<input type="radio" name="przegladarka" value="Ch"> Chrome <br>
+				<input type="radio" name="przegladarka" value="II">
+				Internet Explorer<br>
+				<!-- Inne znaczniki pól formularza -->
+				<br>Wskaż hobby i uzasadnij dlaczego to lubisz:
+				<br>
+				<select size="3" name="hobby" multiple="multiple" required>
+					<option value="t">Turystyka</option>
+					<option value="m">Muzyka</option>
+					<option value="f">Film</option>
+					<option value="s">Sport</option>
+					<option value="i">Inne</option>
+				</select><br>
+				<textarea cols="10" rows="3" name="opinia">Po prostu lubię.</textarea> <br>
+				<input type="submit" value="Wyślij" class="btn">
+				<input type="reset" value="Wyczyść" class="btn">
+			</form>
+		</div>
 		<aside>
 			<div class="box">
 				<h3>Walidatory:</h3>
@@ -82,6 +82,6 @@
 			</div>
 		</aside>
 		<footer> &copy;VT </footer>
-    </div>
+	</div>
 </body>
 </html>
