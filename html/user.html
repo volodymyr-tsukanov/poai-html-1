@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formularz rejestracji</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+		 //definicja klasy User
+		 class User{
+			constructor(email="", login="user",pass="user") {
+				this.login=login;
+				this.pass=pass;
+				this.email=email;
+			}
+			pokaz(){
+			//uzupełnij dane o loginie I emailu:
+				return "Dane użytkownika: login:"+ "...";
+			}
+		} // koniec definicji klasy User
+		//skrypt główny – instrukcje są wykonywane dopiero po załadowaniu DOM:
+		document.addEventListener('DOMContentLoaded', () => {
+			var user=new User();
+			//pokaż dane o użytkowniku na konsoli
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<h2>Rejestracja nowego użytkownika w localStorage</h2>
+		<!-- Przygotowanie elementów do wyświetlania formularza rejestracji i danych i komunikatów informacyjnych -->
+		<div id='formularz'></div>
+		<div id='info'></div>
+	</div>
+</body>
+</html>
