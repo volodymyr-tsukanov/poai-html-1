@@ -14,7 +14,7 @@
 			<h2>Szybki kurs HTML</h2>
 		</header>
 		<nav>
-			<ul>
+			<ul id="nav">
 				<li><a href="index.html">Podstawy</a></li>
 				<li><a href="tabele.html">Tabele</a></li>
 				<li><a href="">Formularze</a>
@@ -32,8 +32,8 @@
 			<label for="kwota">Kwota: </label> <input type="number" id="kwota" name="K" /> <br>
 			<label for="liczba_rat">Ile rat: </label> <input type="number" id="liczba_rat" name="n" /> <br>
 			<label for="procent">Procent: </label> <input type="number" id="procent" name="pr" /> <br>
-			<label for="rata_mies">Rata miesięczna: </label> <input type="text" id="rata_mies" name="rata" readonly /> <br>
-			<label for="kwota_odsetki">Kwota z odsetkami: </label> <input type="text" id="kwota_odsetki" name="K_ods" readonly /> <br>
+			<label for="rata_mies">Rata miesięczna: </label> <input type="text" id="rata_mies" class="zielony" name="rata" readonly /> <br>
+			<label for="kwota_odsetki">Kwota z odsetkami: </label> <input type="text" id="kwota_odsetki" class="zielony" name="K_ods" readonly /> <br>
 			<button class="btn" onclick="obliczRata()">Oblicz ratę stałą</button>
 		</div>
 		<aside>
