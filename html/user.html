@@ -5,31 +5,61 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
-		 //definicja klasy User
 		 class User{
-			constructor(email="", login="user",pass="user") {
+			constructor(email='', login='user',pass='user') {
 				this.login=login;
 				this.pass=pass;
 				this.email=email;
 			}
 			pokaz(){
-			//uzupełnij dane o loginie I emailu:
-				return "Dane użytkownika: login:"+ "...";
+				return 'Dane użytkownika:{login: ' + this.login + '; email: ' + this.email + '; pass: ' + this.pass + '}';
 			}
-		} // koniec definicji klasy User
-		//skrypt główny – instrukcje są wykonywane dopiero po załadowaniu DOM:
+			formularzRejestracji(){
+				var formularz = '';
+				formularz += '<div>Email: <input type="email" id="eml"></div><br> <div>Login: <input type="text" id="lgn"></div><br> <div>Password:  <input type="password" id="pwd"></div><br> <button id="rejestruj">Zarejestruj</button>';
+				return formularz;
+			}
+			toJson(){
+				return JSON.stringify('{email:'+this.email+';pass:'+this.pass+'}');
+			}
+			save(){
+				let val = this.toJson();
+				if(localStorage.getItem(this.login)){
+					if(confirm('That user already exists. Update?')){
+						localStorage.setItem(this.login, val);
+						document.getElementById('eml').value = '';
+						document.getElementById('lgn').value = '';
+						document.getElementById('pwd').value = '';
+					}
+				}
+				else{
+					localStorage.setItem(this.login, val);
+					document.getElementById('eml').value = '';
+					document.getElementById('lgn').value = '';
+					document.getElementById('pwd').value = '';
+				}
+			}
+		}
+		
+		
 		document.addEventListener('DOMContentLoaded', () => {
-			var user=new User();
-			//pokaż dane o użytkowniku na konsoli
+			var user = new User();
+			document.getElementById('formularz').innerHTML = user.formularzRejestracji();
+			console.log(user.pokaz());
+			
+			rejestruj.addEventListener('click', ()=> {
+				user = new User(document.getElementById('eml').value, document.getElementById('lgn').value, document.getElementById('pwd').value);
+				user.save();
+				console.log(localStorage.getItem(user.login));
+			});
 		});
 	</script>
 </head>
 <body>
 	<div>
 		<h2>Rejestracja nowego użytkownika w localStorage</h2>
-		<!-- Przygotowanie elementów do wyświetlania formularza rejestracji i danych i komunikatów informacyjnych -->
-		<div id='formularz'></div>
-		<div id='info'></div>
+		<div id="formularz"></div>
+		<div id="info"></div>
 	</div>
 </body>
 </html>
