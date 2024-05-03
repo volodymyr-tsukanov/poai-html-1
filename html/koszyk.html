@@ -41,93 +41,117 @@
 	</div>
 	
 	<script>
-	function save() {
-		let item = {};
-		item.name = document.getElementById('product-name').value;
-		item.price = document.getElementById('product-price').value;
-		item.color = document.getElementById('product-color').value;
-		item.quantity = document.getElementById('product-quantity').value;
-		localStorage.setItem('item_'+localStorage.length, JSON.stringify(item));
-		
-		document.getElementById('product-name').value = '';
-		document.getElementById('product-price').value = '';
-		document.getElementById('product-color').value = '';
-		document.getElementById('product-quantity').value = '';
-	}
-	
-	function showByIndex(indexes) {
-		document.getElementById('data-container').style = '';
-		if(indexes.length == 0) document.getElementById('table-data').innerHTML = 'Nothing to filter/show...';
-		else{
-			let dt = document.getElementById('table-data');
-			dt.innerHTML = '';
-			for(let i=0; i<indexes.length; i++){
-				let item = JSON.parse(localStorage.getItem('item_'+indexes[i]));
-				dt.innerHTML += '<tr><td>'+(i+1)+'</td><td>'+item.name+'</td><td>'+item.price+'</td><td><div style="border-radius:5px;background:'+item.color+'">'+item.color+'</div></td><td>'+item.quantity+'</td><td><button onclick="clearByIndex('+i+')">Remove</button></td></tr>';
+		class Item{
+			constructor(name='', price='', color='', quantity='') {
+				this.name = name == '' ? document.getElementById('product-name').value : name;
+				this.price = price == '' ? document.getElementById('product-price').value : price;
+				this.color = color == '' ? document.getElementById('product-color').value : color;
+				this.quantity = quantity == '' ? document.getElementById('product-quantity').value : quantity;
+			}
+
+			toJson(){
+				var jsonData = { name : this.name , price : this.price , color : this.color, quantity : this.quantity };
+				return JSON.stringify(jsonData);
+			}
+			fromJson(jsonData){
+				this.name = jsonData.name;
+				this.price = jsonData.price;
+				this.color = jsonData.color;
+				this.quantity = jsonData.quantity;
+			}
+
+			printTable(){
+				return '<td>'+this.name+'</td><td>'+this.price+'</td><td><div style="border-radius:5px;background:'+this.color+'">'+this.color+'</div></td><td>'+this.quantity+'</td>';
 			}
 		}
-	}
-	function showAll() {
-		document.getElementById('data-container').style = '';
-		if(localStorage.length == 0) document.getElementById('data-container').innerHTML = 'Nothing to show...';
-		else{
-			let dt = document.getElementById('table-data');
-			dt.innerHTML = '';
-			for(let i=0; i<localStorage.length; i++){
-				let item = JSON.parse(localStorage.getItem('item_'+i));
-				dt.innerHTML += '<tr><td>'+(i+1)+'</td><td>'+item.name+'</td><td>'+item.price+'</td><td><div style="border-radius:5px;background:'+item.color+'">'+item.color+'</div></td><td>'+item.quantity+'</td><td><button onclick="clearByIndex('+i+')">Remove</button></td></tr>';
-			}
-		}
-	}
-	
-	function clearFilters() {
-		showAll();
-		document.getElementById('filter-p_nm').value = '';
-		document.getElementById('filter-p_pr').value = '';
-		document.getElementById('filter-p_cr').value = '';
-		document.getElementById('filter-p_qt').value = '';
-	}
-	function showFiltred() {
-		let indexes = [];
-		let f_nm = document.getElementById('filter-p_nm').value;
-		let f_pr = document.getElementById('filter-p_pr').value;
-		let f_cr = document.getElementById('filter-p_cr').value;
-		let f_qt = document.getElementById('filter-p_qt').value;
-		
-		for(let i=0; i<localStorage.length; i++){
-			let item = JSON.parse(localStorage.getItem('item_'+i));
-			let p = true;
+
+
+		function save(){
+			let item = new Item();
+			localStorage.setItem('item_'+localStorage.length, item.toJson());
 			
-			if(p && f_nm && !item.name.includes(f_nm)) p = false;
-			else if(p && f_pr && item.price != f_pr) p = false;
-			else if(p && f_cr && item.color.toString().includes(f_cr)) p = false;
-			else if(p && f_qt && item.quantity != f_qt) p = false;
-			if(p) indexes.push(i);
-		}
-		
-		showByIndex(indexes);
-	}
-	
-	function clearByIndex(index) {
-		if(confirm('Confirm clear_by_index action')){
-			if(index < 0 || index >= localStorage.length) alert('!Wrong index!');
-			else{
-				for(let i=index; i<localStorage.length-1; i++) localStorage.setItem('item_'+i, localStorage.getItem('item_'+(i+1)));
-				localStorage.removeItem('item_'+(localStorage.length-1));
-				showAll();
-			}
-		}
-	}
-	function clearAll() {
-		if(confirm('Confirm clear_all action')){
-			localStorage.clear();
 			document.getElementById('product-name').value = '';
 			document.getElementById('product-price').value = '';
 			document.getElementById('product-color').value = '';
 			document.getElementById('product-quantity').value = '';
-			showAll();
 		}
-	}
+		
+		function showByIndex(indexes){
+			document.getElementById('data-container').style = '';
+			if(indexes.length == 0) document.getElementById('table-data').innerHTML = 'Nothing to filter/show...';
+			else{
+				let item = new Item();
+				let dt = document.getElementById('table-data');
+				dt.innerHTML = '';
+				for(let i=0; i<indexes.length; i++){
+					item.fromJson(JSON.parse(localStorage.getItem('item_'+indexes[i])));
+					dt.innerHTML += '<tr><td>'+(i+1)+'</td>' + item.printTable() + '<td><button onclick="clearByIndex('+i+')">Remove</button></td></tr>';
+				}
+			}
+		}
+		function showAll() {
+			document.getElementById('data-container').style = '';
+			if(localStorage.length == 0) document.getElementById('data-container').innerHTML = 'Nothing to show...';
+			else{
+				let dt = document.getElementById('table-data');
+				let item = new Item();
+				dt.innerHTML = '';
+				for(let i=0; i<localStorage.length; i++){
+					item.fromJson(JSON.parse(localStorage.getItem('item_'+i)));
+					dt.innerHTML += '<tr><td>'+(i+1)+'</td>' + item.printTable() + '<td><button onclick="clearByIndex('+i+')">Remove</button></td></tr>';
+				}
+			}
+		}
+		
+		function clearFilters() {
+			showAll();
+			document.getElementById('filter-p_nm').value = '';
+			document.getElementById('filter-p_pr').value = '';
+			document.getElementById('filter-p_cr').value = '';
+			document.getElementById('filter-p_qt').value = '';
+		}
+		function showFiltred() {
+			let indexes = [];
+			let item = new Item();
+			let f_nm = document.getElementById('filter-p_nm').value;
+			let f_pr = document.getElementById('filter-p_pr').value;
+			let f_cr = document.getElementById('filter-p_cr').value;
+			let f_qt = document.getElementById('filter-p_qt').value;
+			
+			for(let i=0; i<localStorage.length; i++){
+				item.fromJson(JSON.parse(localStorage.getItem('item_'+i)));
+				let p = true;
+				
+				if(p && f_nm && !item.name.includes(f_nm)) p = false;
+				else if(p && f_pr && item.price != f_pr) p = false;
+				else if(p && f_cr && item.color.toString().includes(f_cr)) p = false;
+				else if(p && f_qt && item.quantity != f_qt) p = false;
+				if(p) indexes.push(i);
+			}
+			
+			showByIndex(indexes);
+		}
+		
+		function clearByIndex(index) {
+			if(confirm('Confirm clear_by_index action')){
+				if(index < 0 || index >= localStorage.length) alert('!Wrong index!');
+				else{
+					for(let i=index; i<localStorage.length-1; i++) localStorage.setItem('item_'+i, localStorage.getItem('item_'+(i+1)));
+					localStorage.removeItem('item_'+(localStorage.length-1));
+					showAll();
+				}
+			}
+		}
+		function clearAll() {
+			if(confirm('Confirm clear_all action')){
+				localStorage.clear();
+				document.getElementById('product-name').value = '';
+				document.getElementById('product-price').value = '';
+				document.getElementById('product-color').value = '';
+				document.getElementById('product-quantity').value = '';
+				showAll();
+			}
+		}
 	</script>
 </body>
 </html>
