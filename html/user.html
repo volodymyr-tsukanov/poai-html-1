@@ -14,13 +14,22 @@
 			pokaz(){
 				return 'Dane użytkownika:{login: ' + this.login + '; email: ' + this.email + '; pass: ' + this.pass + '}';
 			}
+			info(msg){
+				document.getElementById('info').innerHTML = msg;
+			}
 			formularzRejestracji(){
 				var formularz = '';
-				formularz += '<div>Email: <input type="email" id="eml"></div><br> <div>Login: <input type="text" id="lgn"></div><br> <div>Password:  <input type="password" id="pwd"></div><br> <button id="rejestruj">Zarejestruj</button>';
+				formularz += '<div>Email: <input type="email" id="eml"></div><br> <div>Login: <input type="text" id="lgn"></div><br> <div>Password:  <input type="password" id="pwd"></div><br> <input type="submit" id="rejestruj">';
 				return formularz;
 			}
 			toJson(){
-				return JSON.stringify('{email:'+this.email+';pass:'+this.pass+'}');
+				var jsonData = { login : this.login , email : this.email , pass : this.pass };
+				return JSON.stringify(jsonData);
+			}
+			fromJson(jsonData){
+				this.email = jsonData.email;
+				this.login = jsonData.login;
+				this.pass = jsonData.pass;
 			}
 			save(){
 				let val = this.toJson();
@@ -30,13 +39,28 @@
 						document.getElementById('eml').value = '';
 						document.getElementById('lgn').value = '';
 						document.getElementById('pwd').value = '';
+						this.info('User updated');
 					}
 				}
 				else{
-					localStorage.setItem(this.login, val);
-					document.getElementById('eml').value = '';
-					document.getElementById('lgn').value = '';
-					document.getElementById('pwd').value = '';
+					let contains = false;
+					for (let i = 0; i < localStorage.length; i++) {
+						let key = localStorage.key(i);
+						let val = JSON.parse(localStorage.getItem(key));
+						if(val.email == this.email){
+							contains = true;
+							break;
+						}
+					}
+
+					if(contains) this.info('User with this email has been already created');
+					else{
+						localStorage.setItem(this.login, val);
+						document.getElementById('eml').value = '';
+						document.getElementById('lgn').value = '';
+						document.getElementById('pwd').value = '';
+						this.info('User created');
+					}
 				}
 			}
 		}

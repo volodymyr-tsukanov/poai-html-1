@@ -44,7 +44,7 @@
 		else{
 			let dt = document.getElementById('data');
 			dt.innerHTML = '';
-			for(var i=0; i<sessionStorage.length; i++){
+			for(let i=0; i<sessionStorage.length; i++){
 				let key = sessionStorage.key(i);
 				let val = sessionStorage.getItem(key);
 				dt.innerHTML += '<div style="flex:30%;width:fit-content;margin:2px;padding:8px;border-radius:6px;background:'+key+'"><div style="background:white">('+(i+1)+') '+val+', kod koloru: '+key+'</div></div><br>';
