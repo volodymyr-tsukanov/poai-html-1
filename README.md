@@ -10,4 +10,4 @@ Realizacja aplikacji pracującej z danymi w formacie json. </br>
   - [Small Business](https://startbootstrap.com/template/small-business)
   - Auto Slider
 
-**HTML**; **CSS**; **JavaScript**; **JSON**; **Google Maps API**
+**HTML**; **CSS**; **JavaScript**; **JSON**; **Google Maps API**; **FetchAPI**
