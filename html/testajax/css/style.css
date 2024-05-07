@@ -1,0 +1,47 @@
+body {
+	background:#d4c7b9;
+}
+h1,h2,footer {
+	padding:0.2em;
+	text-align:center;
+}
+nav {
+	float:left;
+	width:100%;
+}
+nav button {
+	background: #45525a;
+	color:#ffe9ba;
+	float:left;
+	display:block;
+	width:24%;
+	margin: 0.5%;
+	padding:1% 0;
+	font-size:110%;
+	text-align:center;
+	border-radius:20px;
+}
+footer {
+	background: #45525a;
+	color:#ffe9ba;
+	clear:both;
+	border-radius:20px;
+}
+
+
+@media screen and (max-width: 720px) {
+	nav button {
+		width: 48%;
+		box-sizing: border-box;
+		padding: 10px 0;
+		font-size:120%;
+	}
+}
+@media screen and (max-width: 560px) {
+	nav button {
+		width: 98%;
+		box-sizing: border-box;
+		padding: 2% 0;
+		font-size:140%;
+	}
+}
