@@ -42,17 +42,20 @@
 	
 	<script>
 	function save() {
+		let items = [];
+		if(localStorage.length > 0) items = JSON.parse(localStorage.getItem('items'));
 		let item = {};
 		item.name = document.getElementById('product-name').value;
 		item.price = document.getElementById('product-price').value;
 		item.color = document.getElementById('product-color').value;
 		item.quantity = document.getElementById('product-quantity').value;
-		localStorage.setItem('item_'+localStorage.length, JSON.stringify(item));
-		
+		items.push(item);
+		localStorage.setItem('items', JSON.stringify(items));
 		document.getElementById('product-name').value = '';
 		document.getElementById('product-price').value = '';
 		document.getElementById('product-color').value = '';
 		document.getElementById('product-quantity').value = '';
+		showAll();
 	}
 	
 	function showByIndex(indexes) {
@@ -62,8 +65,8 @@
 			let dt = document.getElementById('table-data');
 			dt.innerHTML = '';
 			for(let i=0; i<indexes.length; i++){
-				let item = JSON.parse(localStorage.getItem('item_'+indexes[i]));
-				dt.innerHTML += '<tr><td>'+(i+1)+'</td><td>'+item.name+'</td><td>'+item.price+'</td><td><div style="border-radius:5px;background:'+item.color+'">'+item.color+'</div></td><td>'+item.quantity+'</td><td><button onclick="clearByIndex('+i+')">Remove</button></td></tr>';
+				let items = JSON.parse(localStorage.getItem('items'));
+				dt.innerHTML += '<tr><td>'+(i+1)+'</td><td>'+items[i].name+'</td><td>'+items[i].price+'</td><td><div style="border-radius:5px;background:'+items[i].color+'">'+items[i].color+'</div></td><td>'+items[i].quantity+'</td><td><button onclick="clearByIndex('+i+')">Remove</button></td></tr>';
 			}
 		}
 	}
@@ -73,9 +76,9 @@
 		else{
 			let dt = document.getElementById('table-data');
 			dt.innerHTML = '';
-			for(let i=0; i<localStorage.length; i++){
-				let item = JSON.parse(localStorage.getItem('item_'+i));
-				dt.innerHTML += '<tr><td>'+(i+1)+'</td><td>'+item.name+'</td><td>'+item.price+'</td><td><div style="border-radius:5px;background:'+item.color+'">'+item.color+'</div></td><td>'+item.quantity+'</td><td><button onclick="clearByIndex('+i+')">Remove</button></td></tr>';
+			let items = JSON.parse(localStorage.getItem('items'));
+			for(let i=0; i<items.length; i++){
+				dt.innerHTML += '<tr><td>'+(i+1)+'</td><td>'+items[i].name+'</td><td>'+items[i].price+'</td><td><div style="border-radius:5px;background:'+items[i].color+'">'+items[i].color+'</div></td><td>'+items[i].quantity+'</td><td><button onclick="editByIndex('+i+')">Edit</button><button onclick="clearByIndex('+i+')">Remove</button></td></tr>';
 			}
 		}
 	}
@@ -94,26 +97,42 @@
 		let f_cr = document.getElementById('filter-p_cr').value;
 		let f_qt = document.getElementById('filter-p_qt').value;
 		
-		for(let i=0; i<localStorage.length; i++){
-			let item = JSON.parse(localStorage.getItem('item_'+i));
+		let items = JSON.parse(localStorage.getItem('items'));
+		for(let i=0; i<items.length; i++){
 			let p = true;
 			
-			if(p && f_nm && !item.name.includes(f_nm)) p = false;
-			else if(p && f_pr && item.price != f_pr) p = false;
-			else if(p && f_cr && item.color.toString().includes(f_cr)) p = false;
-			else if(p && f_qt && item.quantity != f_qt) p = false;
+			if(p && f_nm && !items[i].name.includes(f_nm)) p = false;
+			else if(p && f_pr && items[i].price != f_pr) p = false;
+			else if(p && f_cr && items[i].color.toString().includes(f_cr)) p = false;
+			else if(p && f_qt && items[i].quantity != f_qt) p = false;
 			if(p) indexes.push(i);
 		}
 		
 		showByIndex(indexes);
 	}
 	
+	function editByIndex(index) {
+		if(confirm('Confirm edit_by_index action')){
+			let items = JSON.parse(localStorage.getItem('items'));
+			if(index < 0 || index >= items.length) alert('!Wrong index!');
+			else{
+				items[index].name = document.getElementById('product-name').value;
+				items[index].price = document.getElementById('product-price').value;
+				items[index].color = document.getElementById('product-color').value;
+				items[index].quantity = document.getElementById('product-quantity').value;
+				localStorage.setItem('items', JSON.stringify(items));
+				showAll();
+			}
+		}
+	}
+	
 	function clearByIndex(index) {
 		if(confirm('Confirm clear_by_index action')){
-			if(index < 0 || index >= localStorage.length) alert('!Wrong index!');
+			let items = JSON.parse(localStorage.getItem('items'));
+			if(index < 0 || index >= items.length) alert('!Wrong index!');
 			else{
-				for(let i=index; i<localStorage.length-1; i++) localStorage.setItem('item_'+i, localStorage.getItem('item_'+(i+1)));
-				localStorage.removeItem('item_'+(localStorage.length-1));
+				items.splice(index, 1);
+				localStorage.setItem('items', JSON.stringify(items));
 				showAll();
 			}
 		}
