@@ -1107,7 +1107,7 @@ progress {
   }
   .col-md-3 {
     flex: 0 0 auto;
-    width: 25%;
+    width: 50%;
   }
   .col-md-4 {
     flex: 0 0 auto;
@@ -1398,6 +1398,12 @@ progress {
   .gy-lg-5 {
     --bs-gutter-y: 3rem;
   }
+  
+  /*Mine*/
+  .col-md-3 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
 }
 @media (min-width: 1200px) {
   .col-xl {
@@ -1566,6 +1572,12 @@ progress {
   .g-xl-5,
   .gy-xl-5 {
     --bs-gutter-y: 3rem;
+  }
+  
+  /*Mine*/
+  .col-md-3 {
+    flex: 0 0 auto;
+    width: 25%;
   }
 }
 @media (min-width: 1400px) {
