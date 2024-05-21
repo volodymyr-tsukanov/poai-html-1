@@ -34,6 +34,7 @@
 			save(){
 				let val = this.toJson();
 				if(localStorage.getItem(this.login)){
+					this.info('User with this login is already exists');
 					if(confirm('That user already exists. Update?')){
 						localStorage.setItem(this.login, val);
 						document.getElementById('eml').value = '';
