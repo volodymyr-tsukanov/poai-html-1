@@ -1,0 +1,2 @@
+Informacja o stronie...<br>
+<button onclick="getJSON()">Get a JSON resource</button> <button onclick="createJSON()">Create a JSON resource</button> click and open console

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formularz rejestracji</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+		class User{
+			constructor(email='', login='user',pass='user') {
+				this.login=login;
+				this.pass=pass;
+				this.email=email;
+			}
+			pokaz(){
+				return 'Dane użytkownika:{login: ' + this.login + '; email: ' + this.email + '; pass: ' + this.pass + '}';
+			}
+			info(msg){
+				document.getElementById('info').innerHTML = msg;
+			}
+			formularzRejestracji(){
+				var formularz = '';
+				formularz += '<div>Email: <input type="email" id="eml"></div><br> <div>Login: <input type="text" id="lgn"></div><br> <div>Password:  <input type="password" id="pwd"></div><br> <input type="submit" id="rejestruj" value="Rejestruj">';
+				return formularz;
+			}
+			toJson(){
+				var jsonData = { login : this.login , email : this.email , pass : this.pass };
+				return JSON.stringify(jsonData);
+			}
+			fromJson(jsonData){
+				this.email = jsonData.email;
+				this.login = jsonData.login;
+				this.pass = jsonData.pass;
+			}
+			save(){
+				let val = this.toJson();
+				if(localStorage.getItem(this.login)){
+					this.info('User with this login is already exists');
+					if(confirm('That user already exists. Update?')){
+						localStorage.setItem(this.login, val);
+						document.getElementById('eml').value = '';
+						document.getElementById('lgn').value = '';
+						document.getElementById('pwd').value = '';
+						this.info('User updated');
+					}
+				}
+				else{
+					let contains = false;
+					for (let i = 0; i < localStorage.length; i++) {
+						let key = localStorage.key(i);
+						let val = JSON.parse(localStorage.getItem(key));
+						if(val.email == this.email){
+							contains = true;
+							break;
+						}
+					}
+
+					if(contains) this.info('User with this email has been already created');
+					else{
+						localStorage.setItem(this.login, val);
+						document.getElementById('eml').value = '';
+						document.getElementById('lgn').value = '';
+						document.getElementById('pwd').value = '';
+						this.info('User created');
+					}
+				}
+			}
+		}
+		
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			var user = new User();
+			document.getElementById('formularz').innerHTML = user.formularzRejestracji();
+			console.log(user.pokaz());
+			
+			rejestruj.addEventListener('click', ()=> {
+				user = new User(document.getElementById('eml').value, document.getElementById('lgn').value, document.getElementById('pwd').value);
+				user.save();
+				console.log(localStorage.getItem(user.login));
+			});
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<h2>Rejestracja nowego użytkownika w localStorage</h2>
+		<div id="formularz"></div>
+		<div id="info"></div>
+	</div>
+</body>
+</html>

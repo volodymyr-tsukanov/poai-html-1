@@ -1,24 +1,11 @@
-# Preset (global)
 <!DOCTYPE html>
 <html lang="pl">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>  </title>
-</head>
-<body>
-</body>
-</html>
-
-
-# Preset
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title> Lab5 </title>
+	<title> Kalkulatorek </title>
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script src="js/funkcje.js"></script>
 </head>
 <body>
 	<div id="kontener">
@@ -26,7 +13,7 @@
 			<h2>Szybki kurs HTML</h2>
 		</header>
 		<nav>
-			<ul id="nav">
+			<ul>
 				<li><a href="index.html">Podstawy</a></li>
 				<li><a href="tabele.html">Tabele</a></li>
 				<li><a href="">Formularze</a>
@@ -40,7 +27,36 @@
 			</ul>
 		</nav>
 		<div id="tresc">
-		
+			<table>
+				<thead>
+					<tr>
+						<th>Wpisz liczby:</th>
+						<th>Wskaż działanie:</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<label for="x">X:</label><br><input type="number" id="x" name="x" /> <br>
+							<label for="y">Y:</label><br><input type="number" id="y" name="y" />
+						</td>
+						<td>
+							<input type="radio" name="operator" value="pls" /> + <br>
+							<input type="radio" name="operator" value="mns" /> - <br>
+							<input type="radio" name="operator" value="mul" /> * <br>
+							<input type="radio" name="operator" value="div" /> / <br>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<button class="btn" onclick="calculate()">Oblicz</button>
+						</td>
+						<td>
+							<label for="wynik">Wynik: </label><input type="text" id="wynik" name="wynik" readonly />
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 		<aside>
 			<div class="box">

@@ -1,0 +1,3 @@
+Tutaj ma być <b>galeria</b><br>
+<i>Zdjęcie1</i><br>
+<i>Zdjęcie2</i>

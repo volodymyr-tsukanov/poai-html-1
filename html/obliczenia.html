@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Obliczenia </title>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+<head lang="pl">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Obliczenia </title>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script src="js/funkcje.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-    <div id="kontener">
-        <header>
-            <h2>Szybki kurs HTML</h2>
-        </header>
-        <nav>
-            <ul id="nav">
+	<div id="kontener">
+		<header>
+			<h2>Szybki kurs HTML</h2>
+		</header>
+		<nav>
+			<ul id="nav">
 				<li><a href="index.html">Podstawy</a></li>
 				<li><a href="tabele.html">Tabele</a></li>
 				<li><a href="">Formularze</a>
 					<ul>
 						<li><a href="formularze.html" >Pola formularza</a></li>
 						<li><a href="obliczenia.html" >Obliczenia w formularzu</a></li>
+						<li><a href="kalkulator.html" >Kalkulatorek</a></li>
 					</ul>
 				</li>
 				<li><a href="galeria.html">Galeria</a></li>
 			</ul>
-        </nav>
-        <div id="tresc">
-		
-        </div>
+		</nav>
+		<div id="tresc">
+			<h3>Pożyczka</h3>
+			<label for="kwota">Kwota: </label> <input type="number" id="kwota" name="K" /> <br>
+			<label for="liczba_rat">Ile rat: </label> <input type="number" id="liczba_rat" name="n" /> <br>
+			<label for="procent">Procent: </label> <input type="number" id="procent" name="pr" /> <br>
+			<label for="rata_mies">Rata miesięczna: </label> <input type="text" id="rata_mies" class="zielony" name="rata" readonly /> <br>
+			<label for="kwota_odsetki">Kwota z odsetkami: </label> <input type="text" id="kwota_odsetki" class="zielony" name="K_ods" readonly /> <br>
+			<button class="btn" onclick="obliczRata()">Oblicz ratę stałą</button>
+		</div>
 		<aside>
 			<div class="box">
 				<h3>Walidatory:</h3>
@@ -45,7 +54,32 @@
 				</ul>
 			</div>
 		</aside>
-        <footer> &copy;VT </footer>
-    </div>
+		<footer> &copy;VT </footer>
+	</div>
+	
+	<script>
+		$(document).ready(function () {
+			$('#tresc').css('background', 'gray');
+			$('input').css('font-weight', 'bold');
+			$('.zielony').css('color', 'lightgreen');
+			$('#oblicz').click(function(){
+				let k = $('#kwota').val();
+				let n = $('#liczba_rat').val();
+				let pr = $('#procent').val();
+	
+				let pr_mc = pr/12;
+				var rata = (k*pr_mc)/(1-1/((1+pr_mc)**n));
+				if(isNaN(rata)/* || isFinite(rata)*/){
+					$('#rata_mies').val('Błędne dane');
+					$('#kwota_odsetki').val('(float, int, float)');
+					alert('Wprowadź poprawne dane');
+				} else{
+					$('#rata_mies').val(rata);
+					$('#kwota_odsetki').val(k+k*(pr/100));
+				}
+				//console.log(k + ' ' + n + ' ' + pr + ' ' + rata);
+			});
+		});
+	</script>
 </body>
 </html>

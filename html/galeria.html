@@ -1,64 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Galeria </title>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Galeria </title>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="js/lightbox.js"></script>
+	<link rel="stylesheet" href="css/lightbox.css" />
+	<script src="js/swipe-slider.js"></script>
+	<link rel="stylesheet" href="css/swipe-slider.css" />
+	<!--link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"-->
 </head>
 <body>
-    <div id="kontener">
-        <header>
-            <h2>Szybki kurs HTML</h2>
-        </header>
-        <nav>
-            <ul id="nav">
+	<div id="kontener">
+		<header>
+			<h2>Szybki kurs HTML</h2>
+		</header> <br>
+		<div class="container">
+
+			<!-- Panels -->
+			<div class="swipe">
+				<div class="panel" data-img="images/full/obraz1.jpg"></div>
+				<div class="panel" data-img="images/full/obraz5.jpg"></div>
+				<div class="panel" data-img="images/full/obraz7.jpg"></div>
+				<div class="panel" data-img="images/full/obraz10.jpg"></div>
+			</div>
+
+			<!-- Info -->
+			<div class="info">
+				<div class="inner">
+					<h3>Simply swipe on any device!</h3>
+					<p>Use this buttons or your fingers. No matter what you do, no matter which device you choose, the picture will swipe and swipe again!</p>
+				</div>
+				<button class="btn-clos">X</button>
+				<div class="buttons">
+					<button class="btn-prev" disabled>&larr;</button>
+					<button class="btn-next">&rarr;</button>
+				</div>
+			</div>
+		</div> <br>
+		<nav>
+			<ul>
 				<li><a href="index.html">Podstawy</a></li>
 				<li><a href="tabele.html">Tabele</a></li>
 				<li><a href="">Formularze</a>
 					<ul>
 						<li><a href="formularze.html" >Pola formularza</a></li>
 						<li><a href="obliczenia.html" >Obliczenia w formularzu</a></li>
+						<li><a href="kalkulator.html" >Kalkulatorek</a></li>
 					</ul>
 				</li>
 				<li><a href="" title="">Galeria</a></li>
 			</ul>
-        </nav>
-        <div id="tresc">
-			<h3><center>Galeria zdjęć</center></h3> <br>
+		</nav> <br>
+		<div id="tresc">
+			<h3>Galeria zdjęć</h3> <br>
 			<div id="galeria">
-			<a href="images/full/obraz1.jpg" target="_blank">
-				<img src="images/thumbnails/obraz1.jpg" alt="Obraz 1">
-			</a>
-			<a href="images/full/obraz2.jpg" target="_blank">
-				<img src="images/thumbnails/obraz2.jpg" alt="Obraz 2">
-			</a>
-			<a href="images/full/obraz3.jpg" target="_blank">
-				<img src="images/thumbnails/obraz3.jpg" alt="Obraz 3">
-			</a>
-			<a href="images/full/obraz4.jpg" target="_blank">
-				<img src="images/thumbnails/obraz4.jpg" alt="Obraz 4">
-			</a>
-			<a href="images/full/obraz5.jpg" target="_blank">
-				<img src="images/thumbnails/obraz5.jpg" alt="Obraz 5">
-			</a>
-			<a href="images/full/obraz6.jpg" target="_blank">
-				<img src="images/thumbnails/obraz6.jpg" alt="Obraz 6">
-			</a>
-			<a href="images/full/obraz7.jpg" target="_blank">
-				<img src="images/thumbnails/obraz7.jpg" alt="Obraz 7">
-			</a>
-			<a href="images/full/obraz8.jpg" target="_blank">
-				<img src="images/thumbnails/obraz8.jpg" alt="Obraz 8">
-			</a>
-			<a href="images/full/obraz9.jpg" target="_blank">
-				<img src="images/thumbnails/obraz9.jpg" alt="Obraz 9">
-			</a>
-			<a href="images/full/obraz10.jpg" target="_blank">
-				<img src="images/thumbnails/obraz10.jpg" alt="Obraz 10">
-			</a>
+				<a href="images/full/obraz1.jpg" class="galeria-column" data-lightbox="galeria" data-title="Obraz 1">
+					<img src="images/thumbnails/obraz1.jpg" alt="Obraz 1">
+				</a>
+				<a href="images/full/obraz2.jpg" class="galeria-column" data-lightbox="galeria" data-title="Obraz 2">
+					<img src="images/thumbnails/obraz2.jpg" alt="Obraz 2">
+				</a>
+				<a href="images/full/obraz3.jpg" class="galeria-column" data-lightbox="galeria" data-title="Obraz 3"">
+					<img src="images/thumbnails/obraz3.jpg" alt="Obraz 3">
+				</a>
+					
+				<a href="images/full/obraz4.jpg" class="galeria-column" data-lightbox="galeria" data-title="Obraz 4">
+					<img src="images/thumbnails/obraz4.jpg" alt="Obraz 4">
+				</a>
+				<a href="images/full/obraz5.jpg" class="galeria-column" data-lightbox="galeria" data-title="Obraz 5">
+					<img src="images/thumbnails/obraz5.jpg" alt="Obraz 5">
+				</a>
+				<a href="images/full/obraz6.jpg" class="galeria-column" data-lightbox="galeria" data-title="Obraz 6">
+					<img src="images/thumbnails/obraz6.jpg" alt="Obraz 6">
+				</a>
+				
+				<a href="images/full/obraz7.jpg" class="galeria-column" data-lightbox="galeria" data-title="Obraz 7">
+					<img src="images/thumbnails/obraz7.jpg" alt="Obraz 7">
+				</a>
+				<a href="images/full/obraz8.jpg" class="galeria-column" data-lightbox="galeria" data-title="Obraz 8">
+					<img src="images/thumbnails/obraz8.jpg" alt="Obraz 8">
+				</a>
+				<a href="images/full/obraz9.jpg" class="galeria-column" data-lightbox="galeria" data-title="Obraz 9">
+					<img src="images/thumbnails/obraz9.jpg" alt="Obraz 9">
+				</a>
+				
+				<a href="images/full/obraz10.jpg" class="galeria-column" data-lightbox="galeria" data-title="Obraz 10">
+					<img src="images/thumbnails/obraz10.jpg" alt="Obraz 10">
+				</a>	
 			</div>
-        </div>
+		</div> <br>
 		<aside>
 			<div class="box">
 				<h3>Walidatory:</h3>
@@ -77,7 +110,7 @@
 				</ul>
 			</div>
 		</aside>
-        <footer> &copy;VT </footer>
-    </div>
+		<footer> &copy;VT </footer>
+	</div>
 </body>
 </html>

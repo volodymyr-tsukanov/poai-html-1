@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Auto Slider </title>
+	<script src="auto-slider.js"></script>
+	<link rel="stylesheet" type="text/css" href="auto-slider.css"/>
+</head>
+<body>
+	<div class="slider-container" onclick="nextSlide()">
+		<div class="slider-content">
+			<img class="slider-img slider-img-active" src="1.jpg">
+			<img class="slider-img" src="2.jpg">
+			<img class="slider-img" src="3.jpg">
+		</div>
+		<nav class="slider-nav">
+			<ul>
+				<li class="arrow">
+					<button id="slider-prev" onclick="prevSlide()">Prev</button>
+				</li>
+				<li class="arrow">
+					<button id="slider-next" onclick="nextSlide()">Next</button>
+				</li>
+				<li>
+					<button onclick="startPresentation(switchDelay)">Auto</button>
+					<button onclick="stopPresentation()">Stop</button>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</body>
+</html>
