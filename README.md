@@ -13,4 +13,7 @@ Informatyka l stopień 4 semestr
   - [Small Business](https://startbootstrap.com/template/small-business)
   - Auto Slider
 
-**HTML**; **CSS**; **JavaScript**; **JSON**; **Google Maps API**; **FetchAPI**
+**HTML**; **CSS**; **JavaScript**; **JSON**; **Google Maps API**; **FetchAPI**<br><br>
+
+
+![Archived](https://img.shields.io/badge/status-Archived%20%F0%9F%AA%A6-DC143C?style=for-the-badge&logo=github)
